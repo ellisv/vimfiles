@@ -35,6 +35,7 @@
 
     set tabpagemax=15               " Show only 15 tabs
     set showmode                    " Display the current mode
+    set showcmd                     " Show incomplete cmds down the bottom
 
     set cursorline                  " Hightlight current line
 
@@ -42,12 +43,26 @@
     highlight clear LineNr          " Current line number row will have same
                                     " background color in relative mode
 
+    if has('cmdline_info')
+        set ruler                   " Show the ruler
+        set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
+        set showcmd                 " Show partial commands in status line and
+                                    " Selected characters/lines in
+                                    " visual mode
+    endif
+
+    set backspace=indent,eol,start  " Backspace for dummies
     set linespace=0                 " No extra space between rows
     set number                      " Display line numbers
     set showmatch                   " Show matching brackets/parenthesis
-    set incsearch                   " Find as you type search
     set hlsearch                    " Highlight search terms
+    set incsearch                   " Find as you type search
     set ignorecase                  " Case insesitive search
+    set smartcase                   " Case sensitive when uc present
+    set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys for wrapping
+    set scrolljump=5                " Lines to scroll when cursor off-screen
+    set scrolloff=3                 " Minimum lines to keep above or below
+                                    " cursor
     set foldenable                  " Auto fold code
 
     set list
@@ -58,13 +73,30 @@
 " }
 
 " Formatting {
-    set nowrap          " Do not wrap long lines
-    set autoindent      " Indent at the same level of previous line
-    set shiftwidth=4    " Use indents of 4 spaces
-    set expandtab       " Tabs are spaces
-    set softtabstop=4   " Let backspace delete indent
-    set smartindent     " Automatically inserts one extra level of
-                        " indentation in some cases
+    set wrap                " Wrap long lines
+    set linebreak           " Wrap lines at convenient points
+    set autoindent          " Indent at the same level of previous line
+    set shiftwidth=4        " Use indents of 4 spaces
+    set expandtab           " Tabs are spaces
+    set tabstop=4           " An indentation every four columns
+    set softtabstop=4       " Let backspace delete indent
+    set smartindent         " Automatically inserts one extra level of
+                            " indentation in some cases
+    set pastetoggle=<F12>   " Sane indentation on pastes
+" }
+
+" Key (re)mappings {
+    let mapleader = ','     " Map leader
+
+    " Wrapped lines goes up/down to next row, rather than next line in file
+    noremap j gj
+    noremap k gk
+
+    nmap <silent> <leader>/ :set invhlsearch<CR> " Hide search highlights
+    map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>    " Find merge conflict markers
+
+    " For when you forget to sudo.. Really Write the file.
+    cmap w!! w !sudo tee % >/dev/null
 " }
 
 " Centralize backups, undos, swaps {
