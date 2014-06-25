@@ -1,9 +1,9 @@
-" Environment {
+" Environment {{{
     set nocompatible        " Only VIM support
     call pathogen#infect()  " Activate pathogen
-" }
+" }}}
 
-" General {
+" General {{{
     filetype plugin indent on   " Automatically detect filetypes
     syntax on                   " Syntax highlighting
     set mouse=a                 " Automatically enable mouse usage
@@ -26,9 +26,9 @@
     set ttimeout
     set timeoutlen=100
     set updatetime=1000
-" }
+" }}}
 
-" UI {
+" UI {{{
     set t_Co=256                    " Terminal support for 256 colors
     set background=dark             " Dark scheme
     let g:solarized_termcolors=256  " Solarized theme with 256 colors
@@ -70,9 +70,9 @@
 
     set splitright      " Puts new vsplit windows to the right of the current
     set splitbelow      " Puts new split windows to the bottom of the current
-" }
+" }}}
 
-" Formatting {
+" Formatting {{{
     set wrap                " Wrap long lines
     set linebreak           " Wrap lines at convenient points
     set autoindent          " Indent at the same level of previous line
@@ -83,9 +83,9 @@
     set smartindent         " Automatically inserts one extra level of
                             " indentation in some cases
     set pastetoggle=<F12>   " Sane indentation on pastes
-" }
+" }}}
 
-" Key (re)mappings {
+" Key (re)mappings {{{
     let mapleader = ','     " Map leader
 
     " Wrapped lines goes up/down to next row, rather than next line in file
@@ -99,9 +99,9 @@
 
     " For when you forget to sudo.. Really Write the file.
     cmap w!! w !sudo tee % >/dev/null
-" }
+" }}}
 
-" Centralize backups, undos, swaps {
+" Centralize backups, undos, swaps {{{
     set directory=~/.vim/swaps
     set backupdir=~/.vim/backups
 
@@ -115,4 +115,4 @@
 
     " Source project specific config files
     runtime! projects/**/*.vim
-" }
+" }}}
