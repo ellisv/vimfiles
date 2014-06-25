@@ -134,6 +134,19 @@
 
 " Plugins {{{
 
+    " ctrlp {{{
+        let g:ctrlp_working_path_mode = 'ra'
+        let g:ctrlp_custom_ignore = {
+            \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.idea$',
+            \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
+
+        let g:ctrlp_extensions = ['funky']  " CtrlP extensions
+
+        " Funky search keys
+        nnoremap <Leader>fu :CtrlPFunky<Cr>
+        nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+    " }}}
+
     " fugitive {{{
 
         " http://vimcasts.org/episodes/fugitive-vim-browsing-the-git-object-database
