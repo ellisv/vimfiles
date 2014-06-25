@@ -16,6 +16,7 @@
     " Better Unix / Windows compatibility
     set viewoptions=folds,options,cursor,unix,slash
 
+    set shortmess+=filmnrxoOtT  " Abbrev. of messages (avoids 'hit enter')
     set virtualedit=onemore     " Allow cursor beyond last character
     set history=1000            " Story a ton of history (default is 20)
     " set spell                 " Spell checking on
@@ -35,7 +36,6 @@
 
     set tabpagemax=15               " Show only 15 tabs
     set showmode                    " Display the current mode
-    set showcmd                     " Show incomplete cmds down the bottom
 
     set cursorline                  " Hightlight current line
 
@@ -89,8 +89,10 @@
     let mapleader = ','     " Map leader
 
     " Wrapped lines goes up/down to next row, rather than next line in file
-    noremap j gj
-    noremap k gk
+    " noremap j gj
+    " noremap k gk
+    " noremap <Up> gk
+    " noremap <Down> gj
 
     nmap <silent> <leader>/ :set invhlsearch<CR> " Hide search highlights
     map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>    " Find merge conflict markers
