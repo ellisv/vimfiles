@@ -8,6 +8,12 @@ set ttimeout
 set timeoutlen=100
 set updatetime=1000
 
+" Colors
+let g:solarized_termcolors=256
+set t_Co=256
+colorscheme solarized
+set background=dark
+
 " Default indent settings
 set shiftwidth=4
 set softtabstop=4
