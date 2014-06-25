@@ -1,0 +1,10 @@
+tags
+*~
+*.swp
+.VimballRecord
+undofiles/*
+projects/*
+.netrwhist
+UltiSnips/*
+swaps/*
+backups/*
