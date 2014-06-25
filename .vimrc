@@ -40,6 +40,7 @@
     set tabpagemax=15               " Show only 15 tabs
     set showmode                    " Display the current mode
 
+    set colorcolumn=80              " Highligh column
     set cursorline                  " Hightlight current line
 
     highlight clear SignColumn      " SignColumn should match background
@@ -74,6 +75,8 @@
     set incsearch                   " Find as you type search
     set ignorecase                  " Case insesitive search
     set smartcase                   " Case sensitive when uc present
+    set wildmenu                    " Show list instead of just completing
+    set wildmode=list:longest       " Command <Tab> completion
     set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys for wrapping
     set scrolljump=5                " Lines to scroll when cursor off-screen
     set scrolloff=3                 " Minimum lines to keep above or below
