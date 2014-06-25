@@ -8,6 +8,9 @@
     syntax on                   " Syntax highlighting
     set mouse=a                 " Automatically enable mouse usage
     set mousehide               " Hide the mouse cursor while typing
+
+    set encoding=utf-8
+    set fileencoding=utf-8
     scriptencoding utf-8
 
     " Automatically switch to current dir on buffer change
@@ -49,6 +52,18 @@
         set showcmd                 " Show partial commands in status line and
                                     " Selected characters/lines in
                                     " visual mode
+    endif
+
+    if has('statusline')
+        set laststatus=2
+
+        " Broken down into easily includeable segments
+        " set statusline=%<%f\                     " Filename
+        " set statusline+=%w%h%m%r                 " Options
+        " set statusline+=%{fugitive#statusline()} " Git Hotness
+        " set statusline+=\ [%{&ff}/%Y]            " Filetype
+        " set statusline+=\ [%{getcwd()}]          " Current dir
+        " set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
     endif
 
     set backspace=indent,eol,start  " Backspace for dummies
@@ -115,4 +130,27 @@
 
     " Source project specific config files
     runtime! projects/**/*.vim
+" }}}
+
+" Plugins {{{
+
+    " fugitive {{{
+
+        " http://vimcasts.org/episodes/fugitive-vim-browsing-the-git-object-database
+        " delete fugitive buffers when we leave them
+        autocmd BufReadPost fugitive://* set bufhidden=delete
+        autocmd BufReadPost fugitive://*
+        \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+        \   nnoremap <buffer> .. :edit %:h<CR> |
+        \ endif
+
+    " }}}
+
+    " vim-airline {{{
+        let g:airline#extensions#tabline#enabled = 1
+        let g:airline_theme = 'solarized'
+        let g:airline_left_sep='›'  " Slightly fancier than '>'
+        let g:airline_right_sep='‹' " Slightly fancier than '<'
+    " }}}
+
 " }}}
