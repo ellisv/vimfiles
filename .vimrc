@@ -117,6 +117,8 @@
 
     " For when you forget to sudo.. Really Write the file.
     cmap w!! w !sudo tee % >/dev/null
+
+    nnoremap <Leader>nt :NERDTree<CR>       " Open NERDTree
 " }}}
 
 " Centralize backups, undos, swaps {{{
@@ -140,10 +142,12 @@
     " ctrlp {{{
         let g:ctrlp_working_path_mode = 'ra'
         let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.idea$',
+            \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.idea$\|\log$\|\tmp$',
             \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
 
         let g:ctrlp_extensions = ['funky']  " CtrlP extensions
+
+        nnoremap <Leader>b :CtrlPBuffer<CR> " Alias for opening buffer list
 
         " Funky search keys
         nnoremap <Leader>fu :CtrlPFunky<Cr>
