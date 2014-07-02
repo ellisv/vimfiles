@@ -46,12 +46,12 @@
 [submodule "bundle/vim-javascript"]
 	path = bundle/vim-javascript
 	url = git@github.com:pangloss/vim-javascript.git
-[submodule "bundle/delimitmate"]
-	path = bundle/delimitmate
-	url = git@github.com:vim-scripts/delimitMate.vim.git
 [submodule "bundle/smarty-syntax"]
 	path = bundle/smarty-syntax
 	url = git@github.com:vim-scripts/smarty-syntax.git
 [submodule "bundle/PIV"]
 	path = bundle/PIV
 	url = git@github.com:spf13/PIV.git
+[submodule "bundle/autoclose"]
+	path = bundle/autoclose
+	url = git@github.com:Townk/vim-autoclose.git
