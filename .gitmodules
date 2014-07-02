@@ -52,3 +52,6 @@
 [submodule "bundle/smarty-syntax"]
 	path = bundle/smarty-syntax
 	url = git@github.com:vim-scripts/smarty-syntax.git
+[submodule "bundle/PIV"]
+	path = bundle/PIV
+	url = git@github.com:spf13/PIV.git
