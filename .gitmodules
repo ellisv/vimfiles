@@ -49,3 +49,6 @@
 [submodule "bundle/delimitmate"]
 	path = bundle/delimitmate
 	url = git@github.com:vim-scripts/delimitMate.vim.git
+[submodule "bundle/smarty-syntax"]
+	path = bundle/smarty-syntax
+	url = git@github.com:vim-scripts/smarty-syntax.git
