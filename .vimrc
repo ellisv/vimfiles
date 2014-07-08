@@ -81,7 +81,7 @@
     set scrolljump=5                " Lines to scroll when cursor off-screen
     set scrolloff=3                 " Minimum lines to keep above or below
                                     " cursor
-    set foldenable                  " Auto fold code
+    set nofoldenable                " Disable code folding
 
     set list
     set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
@@ -262,6 +262,10 @@
         " For perlomni.vim setting.
         " https://github.com/c9s/perlomni.vim
         let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+    " }}}
+
+    " PIV {{{
+        let g:DisableAutoPHPFolding = 1     " Disable PIV autofolding
     " }}}
 
 " }}}
