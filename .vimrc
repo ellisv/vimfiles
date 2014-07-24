@@ -268,4 +268,8 @@
         let g:DisableAutoPHPFolding = 1     " Disable PIV autofolding
     " }}}
 
+    " NERDTree {{{
+        let NERDTreeShowHidden = 1          " Show hidden files
+    " }}}
+
 " }}}
