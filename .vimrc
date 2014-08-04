@@ -40,7 +40,7 @@
     set tabpagemax=15               " Show only 15 tabs
     set showmode                    " Display the current mode
 
-    set colorcolumn=80              " Highligh column
+    set colorcolumn=121             " Highligh column
     set cursorline                  " Hightlight current line
 
     highlight clear SignColumn      " SignColumn should match background
@@ -129,8 +129,6 @@
     if v:version >= 703
         set undodir=~/.vim/undofiles
         set undofile
-
-        set colorcolumn=+1 " Mark the ideal max text width
     endif
 
     " Source project specific config files
