@@ -32,10 +32,10 @@
 " }}}
 
 " UI {{{
+    colorscheme solarized           " Use solarized color scheme
     set t_Co=256                    " Terminal support for 256 colors
     set background=dark             " Dark scheme
     let g:solarized_termcolors=256  " Solarized theme with 256 colors
-    colorscheme solarized           " Use solarized color scheme
 
     set tabpagemax=15               " Show only 15 tabs
     set showmode                    " Display the current mode
@@ -169,6 +169,7 @@
         let g:airline_theme = 'solarized'
         let g:airline_left_sep='›'  " Slightly fancier than '>'
         let g:airline_right_sep='‹' " Slightly fancier than '<'
+        call airline#themes#solarized#refresh()
     " }}}
 
     " UltiSnips {{{
