@@ -14,7 +14,7 @@
     scriptencoding utf-8
 
     " Automatically switch to current dir on buffer change
-    autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+    " autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 
     " Better Unix / Windows compatibility
     set viewoptions=folds,options,cursor,unix,slash
@@ -274,6 +274,11 @@
 
     " Syntastic {{{
         let g:syntastic_php_checkers = ['php', 'phpmd', 'phpcs']
+    " }}}
+
+    " PHP-Namespace {{{
+        inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
+        noremap <Leader>u :call PhpInsertUse()<CR>
     " }}}
 
 " }}}
