@@ -1,6 +1,35 @@
-" Environment {{{
-    set nocompatible        " Only VIM support
-    call pathogen#infect()  " Activate pathogen
+" Vundle {{{
+    set nocompatible    " be iMproved, required
+    filetype off        " required
+
+    " Set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'altercation/vim-colors-solarized'
+    Plugin 'bling/vim-airline'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'airblade/vim-gitgutter'
+    Plugin 'scrooloose/syntastic'
+    Plugin 'kien/ctrlp.vim'
+    Plugin 'tacahiroy/ctrlp-funky'
+    Plugin 'tpope/vim-surround'
+    Plugin 'editorconfig/editorconfig-vim'
+    Plugin 'SirVer/ultisnips'
+    Plugin 'Shougo/neocomplete.vim'
+    Plugin 'honza/vim-snippets'
+    Plugin 'scrooloose/nerdcommenter'
+    Plugin 'elzr/vim-json'
+    Plugin 'pangloss/vim-javascript'
+    Plugin 'vim-scripts/smarty-syntax'
+    Plugin 'spf13/PIV'
+    Plugin 'Townk/vim-autoclose'
+    Plugin 'kchmck/vim-coffee-script'
+    Plugin 'arnaud-lb/vim-php-namespace'
+
+    " All of plugins must be added before the following line
+    call vundle#end()
 " }}}
 
 " General {{{
