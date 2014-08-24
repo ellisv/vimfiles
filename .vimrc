@@ -27,6 +27,7 @@
     Plugin 'Townk/vim-autoclose'
     Plugin 'kchmck/vim-coffee-script'
     Plugin 'arnaud-lb/vim-php-namespace'
+    Plugin 'joonty/vdebug'
 
     " All of plugins must be added before the following line
     call vundle#end()
