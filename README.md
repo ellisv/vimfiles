@@ -4,7 +4,7 @@ Installation
 Clone the repo:
 `git clone https://github.com/EllisV/vimfiles.git ~/.vim`
 
-Grab the plugin submodules:
+Grab Vundle by submodules:
 `cd ~/.vim && git submodule init && git submodule update`
 
 Make sure vim finds the vimrc file by either symlinking it:
@@ -12,6 +12,9 @@ Make sure vim finds the vimrc file by either symlinking it:
 
 or by sourcing it from  your own ~/.vimrc:
 `source ~/.vim/.vimrc`
+
+Install specified plugins by running:
+`vim +PluginInstall +qall`
 
 Requirements
 ============
