@@ -16,6 +16,13 @@ or by sourcing it from  your own ~/.vimrc:
 Install specified plugins by running:
 `vim +PluginInstall +qall`
 
+Compile YouCompleteMe by running:
+
+    cd ~/.vim/bundle/YouCompleteMe
+    ./install.sh --clang-completer
+
+If you want semantic C# support, you should add `--omnisharp-completer` to the install script as well.
+
 Requirements
 ============
 
