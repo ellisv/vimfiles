@@ -24,10 +24,10 @@
     Plugin 'pangloss/vim-javascript'
     Plugin 'vim-scripts/smarty-syntax'
     Plugin 'spf13/PIV'
-    Plugin 'Townk/vim-autoclose'
     Plugin 'kchmck/vim-coffee-script'
     Plugin 'arnaud-lb/vim-php-namespace'
     Plugin 'joonty/vdebug'
+    Plugin 'Raimondi/delimitMate'
 
     " All of plugins must be added before the following line
     call vundle#end()
