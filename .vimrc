@@ -28,6 +28,7 @@
     Plugin 'arnaud-lb/vim-php-namespace'
     Plugin 'joonty/vdebug'
     Plugin 'Raimondi/delimitMate'
+    Plugin 'evidens/vim-twig'
 
     " All of plugins must be added before the following line
     call vundle#end()
