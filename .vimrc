@@ -17,6 +17,7 @@
 " General {{{
     filetype plugin indent on   " Automatically detect filetypes
     syntax on                   " Syntax highlighting
+    set autoread                " Automatically reload files that were changed outside
     set mouse=a                 " Automatically enable mouse usage
     set ttymouse=xterm2
     set mousehide               " Hide the mouse cursor while typing
