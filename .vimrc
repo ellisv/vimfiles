@@ -152,7 +152,7 @@
     runtime! projects/**/*.vim
 " }}}
 
-" Plugin settings {{{
+" Settings {{{
     for fpath in split(globpath('~/.vim/settings', '*.vim'), '\n')
         exe 'source' fpath
     endfor
