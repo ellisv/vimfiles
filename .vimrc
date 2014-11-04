@@ -6,30 +6,9 @@
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
 
-    Plugin 'Valloric/YouCompleteMe'
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'altercation/vim-colors-solarized'
-    Plugin 'bling/vim-airline'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'airblade/vim-gitgutter'
-    Plugin 'scrooloose/syntastic'
-    Plugin 'kien/ctrlp.vim'
-    Plugin 'tacahiroy/ctrlp-funky'
-    Plugin 'tpope/vim-surround'
-    Plugin 'editorconfig/editorconfig-vim'
-    Plugin 'SirVer/ultisnips'
-    Plugin 'honza/vim-snippets'
-    Plugin 'scrooloose/nerdcommenter'
-    Plugin 'elzr/vim-json'
-    Plugin 'pangloss/vim-javascript'
-    Plugin 'vim-scripts/smarty-syntax'
-    Plugin 'spf13/PIV'
-    Plugin 'kchmck/vim-coffee-script'
-    Plugin 'arnaud-lb/vim-php-namespace'
-    Plugin 'joonty/vdebug'
-    Plugin 'Raimondi/delimitMate'
-    Plugin 'evidens/vim-twig'
-    Plugin 'benmills/vimux'
+    for fpath in split(globpath('~/.vim/vundles/', '*.vundle'), '\n')
+        exe 'source' fpath
+    endfor
 
     " All of plugins must be added before the following line
     call vundle#end()

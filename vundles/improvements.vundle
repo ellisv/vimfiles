@@ -1,0 +1,5 @@
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-surround'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'benmills/vimux'
