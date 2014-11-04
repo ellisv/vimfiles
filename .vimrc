@@ -150,63 +150,8 @@
     runtime! projects/**/*.vim
 " }}}
 
-" Plugins {{{
-
-    " ctrlp {{{
-        let g:ctrlp_working_path_mode = 'ra'
-        let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.idea$\|\log$\|\tmp$',
-            \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
-
-        let g:ctrlp_extensions = ['funky']  " CtrlP extensions
-
-        nnoremap <Leader>b :CtrlPBuffer<CR> " Alias for opening buffer list
-
-        " Funky search keys
-        nnoremap <Leader>fu :CtrlPFunky<Cr>
-        nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
-    " }}}
-
-    " fugitive {{{
-
-        " http://vimcasts.org/episodes/fugitive-vim-browsing-the-git-object-database
-        " delete fugitive buffers when we leave them
-        autocmd BufReadPost fugitive://* set bufhidden=delete
-        autocmd BufReadPost fugitive://*
-        \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
-        \   nnoremap <buffer> .. :edit %:h<CR> |
-        \ endif
-
-    " }}}
-
-    " vim-airline {{{
-        let g:airline#extensions#tabline#enabled = 1
-        let g:airline_theme = 'base16'
-        let g:airline_powerline_fonts = 1
-    " }}}
-
-    " UltiSnips {{{
-        let g:UltiSnipsExpandTrigger="<C-j>"
-        let g:UltiSnipsJumpForwardTrigger="<C-j>"
-        let g:UltiSnipsJumpBackwardTrigger="<C-k>"
-    " }}}
-
-    " PIV {{{
-        let g:DisableAutoPHPFolding = 1     " Disable PIV autofolding
-    " }}}
-
-    " NERDTree {{{
-        let NERDTreeShowHidden = 1          " Show hidden files
-        let NERDTreeIgnore = ['\.git$']     " Hide matches in NERDTree
-    " }}}
-
-    " Syntastic {{{
-        let g:syntastic_php_checkers = ['php', 'phpmd', 'phpcs']
-    " }}}
-
-    " PHP-Namespace {{{
-        inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
-        noremap <Leader>u :call PhpInsertUse()<CR>
-    " }}}
-
+" Plugin settings {{{
+    for fpath in split(globpath('~/.vim/settings', '*.vim'), '\n')
+        exe 'source' fpath
+    endfor
 " }}}
