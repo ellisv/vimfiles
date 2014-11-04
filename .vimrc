@@ -147,9 +147,6 @@
         set undodir=~/.vim/undofiles
         set undofile
     endif
-
-    " Source project specific config files
-    runtime! projects/**/*.vim
 " }}}
 
 " Settings {{{
