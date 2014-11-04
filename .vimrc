@@ -29,6 +29,7 @@
     Plugin 'joonty/vdebug'
     Plugin 'Raimondi/delimitMate'
     Plugin 'evidens/vim-twig'
+    Plugin 'benmills/vimux'
 
     " All of plugins must be added before the following line
     call vundle#end()
@@ -148,6 +149,8 @@
 
     " For when you forget to sudo.. Really Write the file.
     cmap w!! w !sudo tee % >/dev/null
+
+    cmap !! VimuxRunCommand ""
 
     nnoremap <Leader>nt :NERDTree<CR>       " Open NERDTree
 " }}}
