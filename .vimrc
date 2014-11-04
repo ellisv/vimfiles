@@ -152,7 +152,7 @@
     set nowb
 
     " Undo settings
-    if v:version >= 703
+    if has('persistent_undo')
         set undodir=~/.vim/undofiles
         set undofile
     endif
