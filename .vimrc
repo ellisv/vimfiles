@@ -146,9 +146,10 @@
     nnoremap <Leader>nt :NERDTree<CR>       " Open NERDTree
 " }}}
 
-" Centralize backups, undos, swaps {{{
-    set directory=~/.vim/swaps
-    set backupdir=~/.vim/backups
+" Centralize undofiles and disable backups {{{
+    set noswapfile
+    set nobackup
+    set nowb
 
     " Undo settings
     if v:version >= 703
