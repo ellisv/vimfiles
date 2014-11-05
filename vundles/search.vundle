@@ -1,1 +1,2 @@
 Plugin 'rking/ag.vim'
+Plugin 'Lokaltog/vim-easymotion'
