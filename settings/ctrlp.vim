@@ -10,3 +10,7 @@ nnoremap <Leader>b :CtrlPBuffer<CR> " Alias for opening buffer list
 " Funky search keys
 nnoremap <Leader>fu :CtrlPFunky<Cr>
 nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+
+" CtrlP-Modified keys
+map <Leader>m :CtrlPModified<CR>
+map <Leader>M :CtrlPBranch<CR>
