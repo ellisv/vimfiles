@@ -90,13 +90,14 @@
     set incsearch                   " Find as you type search
     set ignorecase                  " Case insesitive search
     set smartcase                   " Case sensitive when uc present
-    set wildmenu                    " Show list instead of just completing
-    set wildmode=list:longest       " Command <Tab> completion
     set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys for wrapping
     set scrolljump=5                " Lines to scroll when cursor off-screen
     set scrolloff=3                 " Minimum lines to keep above or below
                                     " cursor
     set nofoldenable                " Disable code folding
+
+    set wildmenu                    " Show list instead of just completing
+    set wildmode=list:longest       " Command <Tab> completion
 
     set list
     set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
