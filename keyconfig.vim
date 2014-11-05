@@ -12,7 +12,7 @@ map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>    " Find merge conflict markers
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
 
-cmap !! VimuxRunCommand ""
+cmap !! VimuxRunCommand ""<Left>
 
 nnoremap <Leader>nt :NERDTree<CR>       " Open NERDTree
 
