@@ -34,7 +34,7 @@
 
     set shortmess+=filmnrxoOtT  " Abbrev. of messages (avoids 'hit enter')
     set virtualedit=onemore     " Allow cursor beyond last character
-    set history=1000            " Story a ton of history (default is 20)
+    set history=1000            " Store a ton of history (default is 20)
     " set spell                 " Spell checking on
     set hidden                  " Allow buffer switching without saving
 
