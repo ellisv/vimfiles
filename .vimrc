@@ -43,7 +43,7 @@
     set timeoutlen=100
     set updatetime=1000
 
-    set clipboard=unnamedplus   " Use default clipboard
+    set clipboard^=unnamedplus   " Use default clipboard
 " }}}
 
 " UI {{{
