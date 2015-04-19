@@ -1,27 +1,8 @@
 Installation
 ============
 
-Clone the repo:
-`git clone https://github.com/EllisV/vimfiles.git ~/.vim`
-
-Grab Vundle by submodules:
-`cd ~/.vim && git submodule init && git submodule update`
-
-Make sure vim finds the vimrc file by either symlinking it:
-`ln -s ~/.vim/.vimrc ~/.vimrc`
-
-or by sourcing it from  your own ~/.vimrc:
-`source ~/.vim/.vimrc`
-
-Install specified plugins by running:
-`vim +PluginInstall +qall`
-
-Compile YouCompleteMe by running:
-
-    cd ~/.vim/bundle/YouCompleteMe
-    ./install.sh --clang-completer
-
-If you want semantic C# support, you should add `--omnisharp-completer` to the install script as well.
+* Clone the repo: `git clone https://github.com/EllisV/vimfiles.git ~/.vim`
+* Run: `make first-install`
 
 Requirements
 ============
