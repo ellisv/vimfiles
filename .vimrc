@@ -1,17 +1,18 @@
-" Vundle {{{
+" Plug {{{
     set nocompatible    " be iMproved, required
-    filetype off        " required
 
-    " Set the runtime path to include Vundle and initialize
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
+    " Download plug.vim if it's not present yet
+    if empty(glob("~/.vim/autoload/plug.vim"))
+        execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+    endif
 
-    for fpath in split(globpath('~/.vim/vundles/', '*.vundle'), '\n')
-        exe 'source' fpath
+    call plug#begin('~/.vim/plugged')
+
+    for fpath in split(globpath('~/.vim/plugs/', '*.plug'), '\n')
+      exe 'source' fpath
     endfor
 
-    " All of plugins must be added before the following line
-    call vundle#end()
+    call plug#end()
 " }}}
 
 " General {{{

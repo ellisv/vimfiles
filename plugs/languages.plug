@@ -1,0 +1,15 @@
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/syntastic'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'elzr/vim-json'
+Plug 'pangloss/vim-javascript'
+Plug 'vim-scripts/smarty-syntax'
+Plug 'kchmck/vim-coffee-script'
+Plug 'evidens/vim-twig'
+Plug 'rodjek/vim-puppet'
+Plug 'itspriddle/vim-jquery'
+Plug 'fatih/vim-go'
+
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+autocmd BufWritePost,FileWritePost *.go execute 'GoLint' | cwindow " GoLint after save"
