@@ -2,14 +2,14 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'elzr/vim-json'
-Plug 'pangloss/vim-javascript'
-Plug 'vim-scripts/smarty-syntax'
-Plug 'kchmck/vim-coffee-script'
-Plug 'evidens/vim-twig'
-Plug 'rodjek/vim-puppet'
-Plug 'itspriddle/vim-jquery'
-Plug 'fatih/vim-go'
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'vim-scripts/smarty-syntax', { 'for': 'smarty' }
+Plug 'kchmck/vim-coffee-script', { 'for': 'cofee' }
+Plug 'evidens/vim-twig', { 'for': 'twig' }
+Plug 'rodjek/vim-puppet', { 'for': 'puppet' }
+Plug 'itspriddle/vim-jquery', { 'for': 'javascript' }
+Plug 'fatih/vim-go', { 'for': 'go' }
 
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 autocmd BufWritePost,FileWritePost *.go execute 'GoLint' | cwindow " GoLint after save"
