@@ -99,6 +99,7 @@
 
     set wildmenu                    " Show list instead of just completing
     set wildmode=list:longest       " Command <Tab> completion
+    set completeopt-=preview        " Remove PREVIEW window
 
     set list
     set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
