@@ -10,6 +10,7 @@ Plug 'evidens/vim-twig', { 'for': 'twig' }
 Plug 'rodjek/vim-puppet', { 'for': 'puppet' }
 Plug 'itspriddle/vim-jquery', { 'for': 'javascript' }
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'groenewege/vim-less', { 'for': 'less' }
 
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 autocmd BufWritePost,FileWritePost *.go execute 'GoLint' | cwindow " GoLint after save"
