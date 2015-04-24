@@ -16,6 +16,9 @@ cmap !! VimuxRunCommand ""<Left>
 
 nnoremap <Leader>nt :NERDTree<CR>       " Open NERDTree
 
+nnoremap <Leader>tw  :FriendsTwitter<CR>    " Open Twitter posts
+nnoremap <Leader>twp :PosttoTwitter<CR>     " Post a tweed
+
 " If you visually select something and hit paste
 " that thing gets yanked into your buffer. This
 " generally is annoying when you're copying one item
