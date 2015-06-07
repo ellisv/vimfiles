@@ -48,10 +48,8 @@
 " }}}
 
 " UI {{{
-    colorscheme solarized           " Use solarized color scheme
     set t_Co=256                    " Terminal support for 256 colors
-    set background=dark             " Dark scheme
-    let g:solarized_termcolors=256  " Solarized theme with 256 colors
+    set background=dark
 
     set tabpagemax=15               " Show only 15 tabs
     set showmode                    " Display the current mode
@@ -146,4 +144,10 @@
     for fpath in split(globpath('~/.vim/settings', '*.vim'), '\n')
         exe 'source' fpath
     endfor
+" }}}
+
+
+" Theme {{{
+    let g:rehash256 = 1
+    colorscheme zenburn
 " }}}

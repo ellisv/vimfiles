@@ -1,2 +1,3 @@
-Plug 'altercation/vim-colors-solarized'
+Plug 'jnurmine/Zenburn'
+Plug 'godlygeek/csapprox'
 Plug 'bling/vim-airline'
