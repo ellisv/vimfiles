@@ -149,5 +149,5 @@
 
 " Theme {{{
     let g:rehash256 = 1
-    colorscheme zenburn
+    colorscheme molokai
 " }}}
