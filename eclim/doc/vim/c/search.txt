@@ -1,4 +1,4 @@
-*vim-c-search*
+*vim-c-search.html*
 
 C/C++ Search
 ************

@@ -1,4 +1,4 @@
-*vim-python-search*
+*vim-python-search.html*
 
 Python Search
 *************

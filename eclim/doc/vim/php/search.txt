@@ -1,4 +1,4 @@
-*vim-php-search*
+*vim-php-search.html*
 
 Php Search
 **********

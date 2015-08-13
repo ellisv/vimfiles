@@ -1,4 +1,4 @@
-*vim-java-format*
+*vim-java-format.html*
 
 Java Source Code Formatting
 ***************************

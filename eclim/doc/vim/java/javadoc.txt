@@ -1,4 +1,4 @@
-*vim-java-javadoc*
+*vim-java-javadoc.html*
 
 Javadoc Support
 ***************

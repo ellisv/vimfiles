@@ -1,4 +1,4 @@
-*vim-scala-search*
+*vim-scala-search.html*
 
 *:ScalaSearch*
 

@@ -1,9 +1,18 @@
-*changes*
+*changes.html*
 
 History of Changes
 ******************
 
-*2.4.1*
+*2.5.0*
+
+
+2.5.0 (Jul. 25, 2015)
+=====================
+
+Eclim:
+   - Eclim now supports, and requires, Eclipse 4.5 (Mars)
+   Git Log (2.5.0) (https://github.com/ervandew/eclim/compare/2.4.1...2.5.0)
+ *2.4.1*
 
 
 2.4.1 (Jan. 22, 2015)
@@ -35,8 +44,8 @@ Java:
      current cursor position (|g:EclimJavaImplInsertAtCursor|). Thanks
      to Daniel Leong
    - Updated :JavaSearch to support sorting
-     (|org-eclim-java-search-sort|) the results by relative path.
-     Thanks to Kannan Rajah
+     (vim-java-search#org-eclim-java-search-sort) the results by
+     relative path.  Thanks to Kannan Rajah
 Groovy:
    - Added support for groovy validation (|vim-groovy-validate|) and
      code completion (|vim-groovy-complete|).  Thanks to Yves Zoundi

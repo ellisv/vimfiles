@@ -1,4 +1,4 @@
-*vim-core-project*
+*vim-core-project.html*
 
 Eclipse Project Management
 **************************

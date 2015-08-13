@@ -1,4 +1,4 @@
-*vim-ruby-search*
+*vim-ruby-search.html*
 
 Ruby Search
 ***********

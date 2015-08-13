@@ -1,4 +1,4 @@
-*development-gettingstarted*
+*development-gettingstarted.html*
 
 Developers Guide
 ****************

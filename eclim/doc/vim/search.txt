@@ -1,4 +1,4 @@
-*vim-search*
+*vim-search.html*
 
 - g:EclimQuickFixOpen (Default: 'botright copen') Specifies the
   command used to open the quickfix window when multiple results are

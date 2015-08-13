@@ -1,4 +1,4 @@
-*vim-java-search*
+*vim-java-search.html*
 
 Java Search
 ***********

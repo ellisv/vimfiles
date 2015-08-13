@@ -1,4 +1,4 @@
-*faq*
+*faq.html*
 
 FAQ / Troubleshooting
 *********************
@@ -147,7 +147,7 @@ section below.
 How can I run eclimd on a truly headless server?
 ------------------------------------------------
 
-Please see the headless guide (|install-headless|).
+Please see the headless guide (install#install-headless).
 
 *eclim_encoding*
 
@@ -253,7 +253,7 @@ I'm editing a [java, python, php, etc] file and code completion doesn't work.
 
   If that returns an error that it is unable to determine the project,
   then see the workspace section above or the guide on creating a new
-  project (|gettingstarted-create|).
+  project (gettingstarted#gettingstarted-create).
 
 - If the correct project info is found, then try running the
   completion again, if it still doesn't return any results run the
