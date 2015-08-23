@@ -14,7 +14,9 @@ cmap w!! w !sudo tee % >/dev/null
 
 cmap !! VimuxRunCommand ""<Left>
 
-nnoremap <Leader>nt :NERDTree<CR>       " Open NERDTree
+nnoremap <c-x>c :bdelete<CR>                " Close a buffer
+
+nnoremap <Leader>nt :NERDTree<CR>           " Open NERDTree
 
 nnoremap <Leader>tw  :FriendsTwitter<CR>    " Open Twitter posts
 nnoremap <Leader>twp :PosttoTwitter<CR>     " Post a tweed
