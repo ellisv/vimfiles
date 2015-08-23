@@ -1,3 +1,0 @@
-Plug 'spf13/PIV', { 'for': 'php' }
-Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php' }
-Plug 'joonty/vdebug', { 'for': 'php' }

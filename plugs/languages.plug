@@ -1,16 +1,29 @@
+" Common for all languages
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'vim-scripts/smarty-syntax', { 'for': 'smarty' }
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
-Plug 'evidens/vim-twig', { 'for': 'twig' }
-Plug 'rodjek/vim-puppet', { 'for': 'puppet' }
-Plug 'itspriddle/vim-jquery', { 'for': 'javascript' }
+Plug 'joonty/vdebug'
+
+" Go
 Plug 'fatih/vim-go', { 'for': 'go' }
+
+" PHP
+Plug 'spf13/PIV', { 'for': 'php' }
+Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php' }
+
+" JavaScript
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'itspriddle/vim-jquery', { 'for': 'javascript' }
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+
+" HTML
+Plug 'vim-scripts/smarty-syntax', { 'for': 'smarty' }
+Plug 'evidens/vim-twig', { 'for': 'twig' }
+
+" CSS
 Plug 'groenewege/vim-less', { 'for': 'less' }
 
-set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-autocmd BufWritePost,FileWritePost *.go execute 'GoLint' | cwindow " GoLint after save"
+" Others
+Plug 'rodjek/vim-puppet', { 'for': 'puppet' }
