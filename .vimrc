@@ -19,9 +19,11 @@
     filetype plugin indent on   " Automatically detect filetypes
     syntax on                   " Syntax highlighting
     set autoread                " Automatically reload files that were changed outside
-    set mouse=a                 " Automatically enable mouse usage
-    set ttymouse=xterm2
     set mousehide               " Hide the mouse cursor while typing
+
+    " Uncomment following lines for mouse support
+    " set mouse=a               " Automatically enable mouse usage
+    " set ttymouse=xterm2
 
     set encoding=utf-8
     set fileencoding=utf-8
@@ -102,6 +104,9 @@
     set list
     set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
+    " Do not display tab sign for specific files
+    autocmd FileType go setlocal listchars=tab:\ \ ,trail:•,extends:#,nbsp:.
+
     set splitright      " Puts new vsplit windows to the right of the current
     set splitbelow      " Puts new split windows to the bottom of the current
 " }}}
@@ -145,7 +150,6 @@
         exe 'source' fpath
     endfor
 " }}}
-
 
 " Theme {{{
     let g:rehash256 = 1
