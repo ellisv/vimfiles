@@ -1,6 +1,4 @@
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-autocmd BufWritePost,FileWritePost *.go execute 'GoLint' | cwindow " GoLint after save"
-autocmd BufWritePost,FileWritePost *.go execute 'GoVet' | cwindow " GoVet after save
 
 " By default syntax-highlighting for Functions, Methods and Structs is disabled. Lets enable them
 let g:go_highlight_functions = 1
