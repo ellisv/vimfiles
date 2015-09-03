@@ -21,6 +21,7 @@ Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 " HTML
 Plug 'vim-scripts/smarty-syntax', { 'for': 'smarty' }
 Plug 'evidens/vim-twig', { 'for': 'twig' }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'smarty', 'twig'] }
 
 " CSS
 Plug 'groenewege/vim-less', { 'for': 'less' }
