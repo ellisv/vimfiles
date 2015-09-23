@@ -86,6 +86,7 @@
     set backspace=indent,eol,start  " Backspace for dummies
     set linespace=0                 " No extra space between rows
     set number                      " Display line numbers
+    set relativenumber              " Display relative line numbers
     set showmatch                   " Show matching brackets/parenthesis
     set hlsearch                    " Highlight search terms
     set incsearch                   " Find as you type search
