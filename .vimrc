@@ -152,6 +152,10 @@
     endfor
 " }}}
 
+" Projects {{{
+    source ~/.vim/projects/init.vim
+" }}}
+
 " Theme {{{
     let g:rehash256 = 1
     colorscheme molokai

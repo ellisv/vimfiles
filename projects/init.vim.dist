@@ -1,0 +1,4 @@
+" Initialization file for project settings
+"
+" Example usage:
+" autocmd BufRead,BufNewFile ~/Documents/Projects/myproject/* source ~/.vim/projects/myproject.vim

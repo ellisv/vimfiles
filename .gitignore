@@ -8,6 +8,7 @@ tags
 /backups/*
 /plugged/*
 /projects/*
+!/projects/init.vim.dist
 /swaps/*
 /UltiSnips/*
 /undofiles/*
