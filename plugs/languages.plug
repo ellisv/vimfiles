@@ -5,6 +5,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'joonty/vdebug'
+Plug 'suan/vim-instant-markdown', { 'for': 'markdown' }
 
 " Go
 Plug 'fatih/vim-go', { 'for': 'go' }
