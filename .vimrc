@@ -140,6 +140,7 @@
 " Languages {{{
     autocmd FileType css,html,php,smarty setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
     autocmd FileType scss,sass,javascript,yaml,coffee setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd BufNewFile,BufRead *.md set filetype=markdown
 " }}}
 
 " Key (re)mappings {{{
