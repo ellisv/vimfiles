@@ -16,6 +16,10 @@ else
     let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 endif
 
+" Disable default mapping, this is because we prefer fzf.vim instead.
+" We can not get rid of this because we still like to use CtrlPFunky and
+" CtrlPModified.
+let g:ctrlp_map = ''
 let g:ctrlp_by_filename = 1        " Default to filename searches
 let g:ctrlp_extensions = ['funky'] " CtrlP extensions
 
