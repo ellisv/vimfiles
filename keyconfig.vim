@@ -14,7 +14,9 @@ cmap w!! w !sudo tee % >/dev/null
 
 cmap !! VimuxRunCommand ""<Left>
 
-nnoremap <c-x>c :bdelete<CR>                " Close a buffer
+nnoremap <c-s> :w<CR>
+nnoremap <c-c> :q<CR>
+nnoremap <c-x>c :bdelete<CR>
 
 nnoremap <Leader>nt :NERDTree<CR>           " Open NERDTree
 
@@ -32,3 +34,9 @@ vnoremap p "_dP"
 " The Smash Escape
 inoremap jk <Esc>
 inoremap kj <Esc>
+
+" Easy split navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
