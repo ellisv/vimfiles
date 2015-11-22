@@ -28,3 +28,7 @@ nnoremap <Leader>twp :PosttoTwitter<CR>     " Post a tweed
 " command in visual mode so that it doesn't overwrite
 " whatever is in your paste buffer.
 vnoremap p "_dP"
+
+" The Smash Escape
+inoremap jk <Esc>
+inoremap kj <Esc>
