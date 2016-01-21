@@ -7,7 +7,6 @@ Plug 'briandoll/change-inside-surroundings.vim'
 Plug 'chrisbra/NrrwRgn'
 Plug 'sjl/gundo.vim'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'vim-scripts/TwitVim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
