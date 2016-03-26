@@ -11,4 +11,4 @@ update:
 	vim +PlugUpdate +qall
 
 compile-ycm:
-	~/.vim/plugged/YouCompleteMe/install.py --clang-completer
+	~/.vim/plugged/YouCompleteMe/install.py --clang-completer --tern-completer
