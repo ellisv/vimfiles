@@ -2,7 +2,7 @@ first-install:
 	ln -s ~/.vim/.vimrc ~/.vimrc
 	cp -n ~/.vim/projects/init.vim.dist ~/.vim/projects/init.vim
 	vim +PlugInstall +qall
-	~/.vim/plugged/YouCompleteMe/install.py --clang-completer
+	~/.vim/plugged/YouCompleteMe/install.py --clang-completer --tern-completer
 
 install:
 	vim +PlugInstall +qall
