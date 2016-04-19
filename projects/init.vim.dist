@@ -2,3 +2,16 @@
 "
 " Example usage:
 " autocmd BufRead,BufNewFile ~/Documents/Projects/myproject/* source ~/.vim/projects/myproject.vim
+"
+" Examples of configuration:
+"
+" let g:vdebug_options['port'] = 9001
+" let g:vdebug_options['path_maps'] = {'/var/www': '/home/ellis/Documents/Projects/project'}
+"
+" let b:syntastic_php_phpcs_exec = "/home/ellis/Documents/Projects/project/vendor/bin/phpcs"
+" let b:syntastic_php_phpcs_args = "--standard=/home/ellis/Documents/Projects/project/vendor/ongr/ongr-strict-standard/Ongr --ignore=Tests/"
+
+" let b:syntastic_php_phpmd_exec = "/home/ellis/Documents/Projects/project/vendor/bin/phpmd"
+" let b:syntastic_php_phpmd_post_args = "/home/ellis/Documents/Projects/project/app/phpmd.xml"
+
+" let b:syntastic_javascript_eslint_exec = "/home/ellis/Documents/Projects/project/node_modules/.bin/eslint"
