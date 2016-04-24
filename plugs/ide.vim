@@ -1,5 +1,6 @@
 " General {{{
     Plug 'Valloric/YouCompleteMe'
+    Plug 'craigemery/vim-autotag'
     Plug 'scrooloose/nerdcommenter'
     Plug 'scrooloose/syntastic'
     Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'

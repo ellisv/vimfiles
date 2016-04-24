@@ -57,6 +57,8 @@
         call PhpInsertUse()
         call feedkeys('a',  'n')
     endfunction
+
+    set tags+=tags.vendors
 " }}}
 
 " JavaScript {{{
