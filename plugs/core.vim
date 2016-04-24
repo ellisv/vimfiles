@@ -15,7 +15,7 @@
 " }}}
 
 " Project navigation {{{
-    Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
+    Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs' | Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'ctrlpvim/ctrlp.vim' | Plug 'jasoncodes/ctrlp-modified.vim' | Plug 'tacahiroy/ctrlp-funky'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 " }}}
