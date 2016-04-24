@@ -18,6 +18,13 @@
 " PHP {{{
     Plug 'spf13/PIV', { 'for': 'php' }
     Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php' }
+
+    " Snippets {{{
+        Plug 'sniphpets/sniphpets', { 'for': 'php' }
+        Plug 'sniphpets/sniphpets-common', { 'for': 'php' }
+        Plug 'sniphpets/sniphpets-symfony', { 'for': 'php' }
+        Plug 'sniphpets/sniphpets-doctrine', { 'for': 'php' }
+    " }}}
 " }}}
 
 " JavaScript {{{
