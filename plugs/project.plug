@@ -1,6 +1,0 @@
-Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'jasoncodes/ctrlp-modified.vim'
-Plug 'tacahiroy/ctrlp-funky'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'wakatime/vim-wakatime'

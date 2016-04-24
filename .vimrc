@@ -8,7 +8,7 @@
 
     call plug#begin('~/.vim/plugged')
 
-    for fpath in split(globpath('~/.vim/plugs/', '*.plug'), '\n')
+    for fpath in split(globpath('~/.vim/plugs/', '*.vim'), '\n')
       exe 'source' fpath
     endfor
 
