@@ -19,7 +19,7 @@
             \ 'break_on_open': 0,
             \ 'timeout': 20,
             \ 'ide_key': '',
-            \ 'port': 9000,
+            \ 'port': 9001,
             \ 'server': '' }
     " }}}
 " }}}
