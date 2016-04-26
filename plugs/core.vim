@@ -16,7 +16,8 @@
 " }}}
 
 " Search {{{
-    Plug 'rking/ag.vim' " AG plugin must be after FZF as they somehow conflict in yielding no results
+    " AG plugin must be after FZF as they somehow conflict in yielding no results
+    Plug 'rking/ag.vim' | Plug 'Chun-Yang/vim-action-ag' " gagiw, gagi', gag (in visual)
     Plug 'Lokaltog/vim-easymotion'
 " }}}
 
