@@ -39,7 +39,6 @@
 " }}}
 
 " HTML {{{
-    Plug 'evidens/vim-twig', { 'for': 'twig' }
     Plug 'mattn/emmet-vim', { 'for': ['html', 'twig'] }
 " }}}
 

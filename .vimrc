@@ -142,6 +142,14 @@
     autocmd FileType css,html,php,smarty setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
     autocmd FileType scss,sass,javascript,yaml,coffee setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
     autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+    " Better Twig support {{{
+        function SetTwigHtmlOptions()
+            set filetype=twig.html
+            set syntax=htmldjango
+        endfunction
+        autocmd BufNewFile,BufRead *.html.twig call SetTwigHtmlOptions()
+    " }}}
 " }}}
 
 " Key (re)mappings {{{
