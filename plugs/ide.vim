@@ -23,7 +23,7 @@
     " Snippets {{{
         Plug 'sniphpets/sniphpets', { 'for': 'php' }
         Plug 'sniphpets/sniphpets-common', { 'for': 'php' }
-        Plug 'sniphpets/sniphpets-symfony', { 'for': 'php' }
+        Plug 'sniphpets/sniphpets-symfony', { 'for': ['php', 'twig'] }
         Plug 'sniphpets/sniphpets-doctrine', { 'for': 'php' }
     " }}}
 " }}}
