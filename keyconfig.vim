@@ -37,3 +37,13 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" Git mapping
+nnoremap <c-g><c-s> :Gwrite<CR>
+nnoremap <c-g>ll :Gpull<CR>
+nnoremap <c-g>sh :Gpush<CR>
+nnoremap <c-g>d :Gdiff<CR>
+nnoremap gn :GitGutterNextHunk<CR>
+nnoremap gp :GitGutterPrevHunk<CR>
+nnoremap gu :GitGutterUndoHunk<CR>
+nnoremap gs :Gstatus<CR>
