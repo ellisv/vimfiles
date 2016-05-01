@@ -23,7 +23,7 @@
 
 " Editing {{{
     Plug 'editorconfig/editorconfig-vim'
-    Plug 'Raimondi/delimitMate'
+    Plug 'jiangmiao/auto-pairs'
     Plug 'AndrewRadev/splitjoin.vim' " gJ gS
     Plug 'terryma/vim-multiple-cursors'
 

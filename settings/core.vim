@@ -78,3 +78,7 @@
         "nnoremap <Leader>b :Buffers<CR>
     " }}}
 " }}}
+
+" Editing {{{
+    let g:AutoPairsCenterLine = 0
+" }}}
