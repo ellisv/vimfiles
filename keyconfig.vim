@@ -18,7 +18,7 @@ nnoremap <c-s> :w<CR>
 nnoremap <c-c> :q<CR>
 nnoremap <c-x>c :bdelete<CR>
 
-nnoremap <Leader>nt :NERDTree<CR>           " Open NERDTree
+nnoremap <Leader>nt :NERDTreeFind<CR>           " Open NERDTree
 
 " If you visually select something and hit paste
 " that thing gets yanked into your buffer. This
