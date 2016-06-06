@@ -18,7 +18,8 @@ nnoremap <c-s> :w<CR>
 nnoremap <c-c> :q<CR>
 nnoremap <c-x>c :bdelete<CR>
 
-nnoremap <Leader>nt :NERDTreeFind<CR>           " Open NERDTree
+nnoremap <Leader>nt :NERDTreeToggle<CR>         " Open NERDTree
+nnoremap <Leader>nf :NERDTreeFind<CR>           " Search for current file in NERDTree
 
 " If you visually select something and hit paste
 " that thing gets yanked into your buffer. This
