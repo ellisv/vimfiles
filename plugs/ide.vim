@@ -39,6 +39,10 @@
     Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
 " }}}
 
+" Python {{{
+    Plug 'davidhalter/jedi-vim'
+" }}}
+
 " HTML {{{
     Plug 'mattn/emmet-vim', { 'for': ['html', 'twig'] }
 " }}}
