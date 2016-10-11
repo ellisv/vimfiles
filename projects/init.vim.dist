@@ -9,7 +9,7 @@
 " let g:vdebug_options['path_maps'] = {'/var/www': '/home/ellis/Documents/Projects/project'}
 "
 " let b:syntastic_php_phpcs_exec = "/home/ellis/Documents/Projects/project/vendor/bin/phpcs"
-" let b:syntastic_php_phpcs_args = "--standard=/home/ellis/Documents/Projects/project/vendor/ongr/ongr-strict-standard/Ongr --ignore=Tests/"
+" let b:syntastic_php_phpcs_args = "--standard=PSR2"
 
 " let b:syntastic_php_phpmd_exec = "/home/ellis/Documents/Projects/project/vendor/bin/phpmd"
 " let b:syntastic_php_phpmd_post_args = "/home/ellis/Documents/Projects/project/app/phpmd.xml"
