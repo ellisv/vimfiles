@@ -140,7 +140,7 @@
 " Languages {{{
     autocmd BufEnter * :syntax sync fromstart
     autocmd FileType css,html,php,smarty setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
-    autocmd FileType scss,sass,javascript,yaml,coffee setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd FileType scss,sass,javascript,yaml,coffee,ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
     autocmd BufNewFile,BufRead *.md set filetype=markdown
 
     " Better Twig support {{{
