@@ -48,3 +48,8 @@ nnoremap gn :GitGutterNextHunk<CR>
 nnoremap gp :GitGutterPrevHunk<CR>
 nnoremap gu :GitGutterUndoHunk<CR>
 nnoremap gs :Gstatus<CR>
+
+" Remap NERDCommenterInvert in order to resolve conflict with
+" briandoll/change-inside-surroundings plugin
+nmap <C-x>/ <plug>NERDCommenterInvert
+xmap <C-x>/ <plug>NERDCommenterInvert
