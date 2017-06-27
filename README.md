@@ -2,7 +2,7 @@ Installation
 ============
 
 * Clone the repo: `git clone https://github.com/EllisV/vimfiles.git ~/.vim`
-* Run: `make first-install`
+* Run: `make`
 
 Requirements
 ============
