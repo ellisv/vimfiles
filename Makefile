@@ -13,26 +13,24 @@ clean:
 $(HOME)/.vimrc:
 	ln -s $(PWD)/.vimrc $(HOME)/.vimrc
 
-plugged: autoload/plug.vim
+plugged: autoload/plug.vim plugs/*
 	vim -u .vimrc +PlugInstall +qall
-
-projects/init.vim:
-	cp -n projects/init.vim.dist projects/init.vim
+	touch plugged
 
 autoload/plug.vim:
 	mkdir -p autoload
 	wget https://raw.github.com/junegunn/vim-plug/master/plug.vim -O autoload/plug.vim
 
-$(YCMLIB): plugged
-	$(YCMC) $(YCMFLAGS)
+projects/init.vim:
+	cp -n projects/init.vim.dist projects/init.vim
 
-install:
-	vim -u .vimrc +PlugInstall +qall
+${YCMLIB}:
+	$(YCMC) $(YCMFLAGS)
 
 update:
 	vim -u .vimrc +PlugUpdate +qall
 
-compile-ycm: plugged
+compile-ycm:
 	$(YCMC) $(YCMFLAGS)
 
-.PHONY: install update compile-ycm
+.PHONY: update compile-ycm
