@@ -2,13 +2,13 @@ YCMC := plugged/YouCompleteMe/install.py
 YCMFLAGS := "--clang-completer" "--tern-completer"
 YCMLIB := plugged/YouCompleteMe/third_party/ycmd/ycm_core.so
 
+.PHONY: all
 all: $(HOME)/.vimrc projects/init.vim plugged $(YCMLIB)
 
+.PHONY: clean
 clean:
 	rm -f autoload/plug.vim
 	rm -rf plugged
-
-.PHONY: all clean
 
 $(HOME)/.vimrc:
 	ln -s $(PWD)/.vimrc $(HOME)/.vimrc
@@ -27,10 +27,10 @@ projects/init.vim:
 ${YCMLIB}:
 	$(YCMC) $(YCMFLAGS)
 
+.PHONY: update
 update:
 	vim -u .vimrc +PlugUpdate +qall
 
+.PHONY: compile-ycm
 compile-ycm:
 	$(YCMC) $(YCMFLAGS)
-
-.PHONY: update compile-ycm
