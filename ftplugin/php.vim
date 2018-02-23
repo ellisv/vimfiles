@@ -1,5 +1,3 @@
-nnoremap <silent> <buffer> <cr> :PhpSearchContext<cr>
-
 inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
 noremap <Leader>u :call PhpInsertUse()<CR>
 
