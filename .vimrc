@@ -1,6 +1,12 @@
 " Plug {{{
     set nocompatible    " be iMproved, required
 
+    " Use python3 by default unless py2 flag is set.
+    " Run vim --cmd 'let py2 = 1' to run in python 2 mode.
+    if exists('py2') && has('python')
+    elseif has('python3')
+    endif
+
     call plug#begin('~/.vim/plugged')
 
     for fpath in split(globpath('~/.vim/plugs/', '*.vim'), '\n')
