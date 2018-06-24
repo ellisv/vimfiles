@@ -34,19 +34,10 @@
     Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
     Plug 'mxw/vim-jsx', { 'for': 'javascript' }
     Plug 'itspriddle/vim-jquery', { 'for': 'javascript' }
-    Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
     Plug 'moll/vim-node', { 'for': 'javascript' }
     Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
 " }}}
 
 " Python {{{
     Plug 'davidhalter/jedi-vim'
-" }}}
-
-" HTML {{{
-    Plug 'mattn/emmet-vim', { 'for': ['html', 'twig'] }
-" }}}
-
-" Others {{{
-    Plug 'rodjek/vim-puppet', { 'for': 'puppet' }
 " }}}
