@@ -38,6 +38,11 @@
     Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
 " }}}
 
+" TypeScript {{{
+    Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+    Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+" }}}
+
 " Python {{{
     Plug 'davidhalter/jedi-vim'
 " }}}
