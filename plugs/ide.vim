@@ -33,9 +33,7 @@
     Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
     Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
     Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-    Plug 'itspriddle/vim-jquery', { 'for': 'javascript' }
     Plug 'moll/vim-node', { 'for': 'javascript' }
-    Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
 " }}}
 
 " TypeScript {{{

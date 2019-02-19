@@ -63,11 +63,4 @@
 
 " JavaScript {{{
     let g:jsx_ext_required = 0
-
-    let g:tern_map_keys=0
-    let g:tern_show_argument_hints='on_hold'
-" }}}
-
-" HTML {{{
-    let g:user_emmet_leader_key='<C-Z>'
 " }}}
