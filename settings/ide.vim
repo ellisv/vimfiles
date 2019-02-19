@@ -25,6 +25,10 @@
 " }}}
 
 " Common {{{
+    " JSON {{{
+        let g:vim_json_syntax_conceal = 0
+    " }}}
+
     " Instant-Markdown {{{
         let g:instant_markdown_autostart = 0
     " }}}
