@@ -1,5 +1,5 @@
 YCMC := plugged/YouCompleteMe/install.py
-YCMFLAGS := "--clang-completer" "--tern-completer"
+YCMFLAGS := "--clang-completer"
 YCMLIB := plugged/YouCompleteMe/third_party/ycmd/ycm_core.so
 
 .PHONY: all
