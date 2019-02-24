@@ -12,9 +12,11 @@
 " Project navigation {{{
     Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs' | Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'ctrlpvim/ctrlp.vim' | Plug 'jasoncodes/ctrlp-modified.vim' | Plug 'tacahiroy/ctrlp-funky'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
 " }}}
 
 " Search {{{
+    " AG plugin must be after FZF as they somehow conflict in yielding no results
     Plug 'rking/ag.vim' | Plug 'Chun-Yang/vim-action-ag' " gagiw, gagi', gag (in visual)
     Plug 'Lokaltog/vim-easymotion'
 " }}}

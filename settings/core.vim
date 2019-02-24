@@ -37,6 +37,18 @@
     " }}}
 
     " CTRLP {{{
+        if executable('ag')
+            " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+            let g:ctrlp_user_command = 'ag %s --files-with-matches -U -g "" --ignore "\.git$"'
+
+            " ag is fast enough that CtrlP doesn't need to cache
+            let g:ctrlp_use_caching = 0
+        endif
+
+        " Disable default mapping, this is because we prefer fzf.vim instead.
+        " We can not get rid of this because we still like to use CtrlPFunky and
+        " CtrlPModified.
+        let g:ctrlp_map = ''
         let g:ctrlp_by_filename = 1        " Default to filename searches
         let g:ctrlp_extensions = ['funky'] " CtrlP extensions
 
@@ -49,6 +61,11 @@
         " CtrlP-Modified keys
         map <Leader>m :CtrlPModified<CR>
         map <Leader>M :CtrlPBranch<CR>
+    " }}}
+
+    " FZF {{{
+        nnoremap <c-p> :Files<CR>
+        "nnoremap <Leader>b :Buffers<CR>
     " }}}
 " }}}
 
