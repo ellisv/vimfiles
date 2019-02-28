@@ -21,7 +21,7 @@
 
 " Search {{{
     " AG {{{
-        let g:ag_prg='ag -U --hidden --column --ignore tags --ignore tags.vendors --ignore-dir var/logs --ignore-dir var/cache --ignore-dir node_modules/.cache'
+        let g:ag_prg='ag -U --hidden --column --ignore tags --ignore tags.vendors --ignore-dir var/logs --ignore-dir var/cache --ignore-dir node_modules/.cache --ignore-dir .git'
         nmap ,ag :Ag ""<Left>
     " }}}
 " }}}
