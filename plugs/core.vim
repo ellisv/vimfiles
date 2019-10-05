@@ -25,7 +25,6 @@
     Plug 'editorconfig/editorconfig-vim'
     Plug 'jiangmiao/auto-pairs'
     Plug 'AndrewRadev/splitjoin.vim' " gJ gS
-    Plug 'terryma/vim-multiple-cursors'
 
     " Surroundings {{{
         Plug 'tpope/vim-surround' " E.g. cs{(

@@ -53,3 +53,24 @@ nnoremap gs :Gstatus<CR>
 " briandoll/change-inside-surroundings plugin
 nmap <C-x>/ <plug>NERDCommenterInvert
 xmap <C-x>/ <plug>NERDCommenterInvert
+
+" coc.nvim {{{
+    nmap <silent> <C-m> <Plug>(coc-cursors-word)
+    xmap <silent> <C-m> <Plug>(coc-cursors-range)
+    nmap <silent> <C-m> <Plug>(coc-cursors-word)*
+    xmap <silent> <C-m> y/\V<C-r>=escape(@",'/\')<CR><CR>gN<Plug>(coc-cursors-range)gn
+
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> gy <Plug>(coc-type-definition)
+    nmap <silent> gi <Plug>(coc-implementation)
+    nmap <silent> gr <Plug>(coc-references)
+
+    nnoremap <silent> K :call <SID>show_documentation()<CR>
+    function! s:show_documentation()
+      if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+      else
+        call CocAction('doHover')
+      endif
+    endfunction
+" }}}

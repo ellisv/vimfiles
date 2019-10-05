@@ -1,6 +1,5 @@
 " General {{{
-    Plug 'Valloric/YouCompleteMe'
-    Plug 'craigemery/vim-autotag'
+    Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
     Plug 'scrooloose/nerdcommenter'
     Plug 'scrooloose/syntastic'
     Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
