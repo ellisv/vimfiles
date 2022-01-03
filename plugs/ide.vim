@@ -1,5 +1,5 @@
 " General {{{
-    Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'scrooloose/nerdcommenter'
     Plug 'scrooloose/syntastic'
     Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -42,4 +42,8 @@
 
 " Python {{{
     Plug 'davidhalter/jedi-vim'
+" }}}
+
+" Terraform {{{
+    Plug 'hashivim/vim-terraform'
 " }}}
