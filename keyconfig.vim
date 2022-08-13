@@ -12,8 +12,6 @@ map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>    " Find merge conflict markers
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
 
-cmap !! VimuxRunCommand ""<Left>
-
 nnoremap <c-s> :w<CR>
 nnoremap <c-c> :q<CR>
 nnoremap <c-x>c :bdelete<CR>
