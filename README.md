@@ -6,6 +6,7 @@ Installation
 
 * Clone the repo: `git clone https://github.com/ellisv/vimfiles.git ~/.vim`
 * Run: `make`
+* Run `make init-nvim` to also install neovim configuration
 
 Requirements
 ------------
