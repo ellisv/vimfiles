@@ -1,5 +1,10 @@
+VIM = vim
+
 .PHONY: all
 all: $(HOME)/.vimrc projects/init.vim plugged
+
+.PHONY: init-nvim
+init-nvim: $(HOME)/.config/nvim/init.vim
 
 .PHONY: clean
 clean:
@@ -9,17 +14,20 @@ clean:
 $(HOME)/.vimrc:
 	ln -s $(PWD)/.vimrc $(HOME)/.vimrc
 
+$(HOME)/.config/nvim/init.vim:
+	ln -s $(PWD)/nvim-init.vim $@
+
 plugged: autoload/plug.vim plugs/*
-	vim -u .vimrc +PlugInstall +qall
+	$(VIM) -u .vimrc +PlugInstall +qall
 	touch plugged
 
 autoload/plug.vim:
-	mkdir -p autoload
-	wget https://raw.github.com/junegunn/vim-plug/master/plug.vim -O autoload/plug.vim
+	mkdir -p $(dir $@)
+	curl -o $@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 projects/init.vim:
 	cp -n projects/init.vim.dist projects/init.vim
 
 .PHONY: update
 update:
-	vim -u .vimrc +PlugUpdate +qall
+	$(VIM) -u .vimrc +PlugUpdate +qall
