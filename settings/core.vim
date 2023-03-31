@@ -28,8 +28,8 @@
 
 " Project navigation {{{
     " NERDTree {{{
-        let NERDTreeShowHidden = 1                                 " Show hidden files
-        let NERDTreeIgnore = ['^\.git$', '\.pyc$', '__pycache__']  " Hide matches in NERDTree
+        let NERDTreeShowHidden = 1                                              " Show hidden files
+        let NERDTreeIgnore = ['^\.git$', '\.pyc$', '__pycache__', '.DS_Store']  " Hide matches in NERDTree
         let NERDTreeMinimalUI = 1
         let g:NERDTreeMinimalMenu = 1
 
