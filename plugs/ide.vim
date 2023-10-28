@@ -17,7 +17,6 @@
 
 " PHP {{{
     Plug 'spf13/PIV', { 'for': 'php' }
-    Plug 'arnaud-lb/vim-php-namespace', { 'for': 'php' }
     Plug 'stephpy/vim-php-cs-fixer', { 'for': 'php' }
 
     " Snippets {{{

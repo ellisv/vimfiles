@@ -51,18 +51,6 @@
 
 " PHP {{{
     let g:DisableAutoPHPFolding = 1     " Disable PIV autofolding
-
-    function! IPhpExpandClass()
-        call PhpExpandClass()
-        call feedkeys('a', 'n')
-    endfunction
-
-    function! IPhpInsertUse()
-        call PhpInsertUse()
-        call feedkeys('a',  'n')
-    endfunction
-
-    set tags+=tags.vendors
 " }}}
 
 " JavaScript {{{
