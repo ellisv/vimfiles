@@ -7,9 +7,9 @@
     elseif has('python3')
     endif
 
-    call plug#begin('~/.vim/plugged')
+    call plug#begin('~/.config/nvim/plugged')
 
-    for fpath in split(globpath('~/.vim/plugs/', '*.vim'), '\n')
+    for fpath in split(globpath('~/.config/nvim/plugs/', '*.vim'), '\n')
       exe 'source' fpath
     endfor
 
@@ -155,17 +155,17 @@
 " }}}
 
 " Key (re)mappings {{{
-    source ~/.vim/keyconfig.vim
+    source ~/.config/nvim/keyconfig.vim
 " }}}
 
 " Settings {{{
-    for fpath in split(globpath('~/.vim/settings', '*.vim'), '\n')
+    for fpath in split(globpath('~/.config/nvim/settings', '*.vim'), '\n')
         exe 'source' fpath
     endfor
 " }}}
 
 " Projects {{{
-    source ~/.vim/projects/init.vim
+    source ~/.config/nvim/projects/init.vim
 " }}}
 
 " Theme {{{

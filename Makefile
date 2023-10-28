@@ -1,21 +1,12 @@
-VIM = vim
+VIM = nvim
 
 .PHONY: all
-all: $(HOME)/.vimrc projects/init.vim plugged
-
-.PHONY: init-nvim
-init-nvim: $(HOME)/.config/nvim/init.vim
+all: projects/init.vim plugged
 
 .PHONY: clean
 clean:
 	rm -f autoload/plug.vim
 	rm -rf plugged
-
-$(HOME)/.vimrc:
-	ln -s $(PWD)/.vimrc $(HOME)/.vimrc
-
-$(HOME)/.config/nvim/init.vim:
-	ln -s $(PWD)/nvim-init.vim $@
 
 plugged: autoload/plug.vim plugs/*
 	$(VIM) -u .vimrc +PlugInstall +qall
