@@ -1,6 +1,5 @@
 " Appearance {{{
     Plug 'tomasr/molokai'
-    Plug 'godlygeek/csapprox'
     Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 " }}}
 
