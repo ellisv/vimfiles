@@ -1,11 +1,5 @@
 let mapleader = ','     " Map leader
 
-" Wrapped lines goes up/down to next row, rather than next line in file
-" noremap j gj
-" noremap k gk
-" noremap <Up> gk
-" noremap <Down> gj
-
 nmap <silent> <leader>/ :set invhlsearch<CR> " Hide search highlights
 map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>    " Find merge conflict markers
 
