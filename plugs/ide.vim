@@ -38,10 +38,6 @@
     Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 " }}}
 
-" Python {{{
-    Plug 'davidhalter/jedi-vim'
-" }}}
-
 " Terraform {{{
     Plug 'hashivim/vim-terraform'
 " }}}
