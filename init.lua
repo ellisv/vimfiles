@@ -44,6 +44,13 @@ vim.opt.foldenable = false    -- Disable code folding
 vim.opt.list = true
 vim.opt.listchars = { tab = '› ', trail = '•', nbsp = '.' }
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'go',
+  callback = function ()
+    vim.opt_local.listchars = { tab = '  ', trail = '•', nbsp = '.' }
+  end
+})
+
 vim.opt.splitright = true -- Puts new vsplit windows to the right of the current
 vim.opt.splitbelow = true -- Puts new split windows to the bottom of the current
 
