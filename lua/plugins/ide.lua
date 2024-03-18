@@ -176,4 +176,32 @@ return {
       })
     end,
   },
+
+  {
+    'mfussenegger/nvim-dap',
+    dependencies = {
+      'rcarriga/nvim-dap-ui',
+      'mfussenegger/nvim-dap-python',
+    },
+    config = function()
+      require('dap.ext.vscode').load_launchjs()
+      local dap = require('dap')
+      local dapui = require('dapui')
+      dapui.setup({})
+      dap.listeners.after.event_initialized['dapui_config'] = function()
+        dapui.open({})
+      end
+      dap.listeners.before.event_terminated['dapui_config'] = function()
+        dapui.close({})
+      end
+      dap.listeners.before.event_exited['dapui_config'] = function()
+        dapui.close({})
+      end
+
+      require('dap-python').setup('~/.local/share/nvim/mason/packages/debugpy/venv/bin/python')
+
+      vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = 'Debug Toggle Breakpoint' })
+      vim.keymap.set('n', '<leader>dc', dap.continue, { desc = 'Debug Continue' })
+    end,
+  },
 }
