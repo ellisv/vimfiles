@@ -172,6 +172,7 @@ return {
       vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = 'Find existing buffers' })
       vim.keymap.set('n', '<leader>m', builtin.git_status, { desc = 'Find modified files' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Search by Grep' })
+      vim.keymap.set('n', '<leader>fu', builtin.lsp_document_symbols, { desc = 'Find symbols in document' })
     end,
   },
 
