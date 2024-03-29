@@ -120,6 +120,7 @@ return {
                   plugins = {
                     pycodestyle = { maxLineLength = 120 },
                     pyflakes = { maxLineLength = 120 },
+                    rope_autoimport = { enabled = true },
                   },
                 },
               },
