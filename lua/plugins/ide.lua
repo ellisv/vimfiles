@@ -60,6 +60,7 @@ return {
     dependencies = {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
+      'pmizio/typescript-tools.nvim',
     },
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
@@ -121,6 +122,7 @@ return {
                     pycodestyle = { maxLineLength = 120 },
                     pyflakes = { maxLineLength = 120 },
                     rope_autoimport = { enabled = true },
+                    -- :PylspInstall pyls-isort
                     isort = { enabled = true },
                   },
                 },
@@ -129,6 +131,8 @@ return {
           end,
         },
       })
+
+      require('typescript-tools').setup({})
 
       vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = "*.go",
@@ -222,6 +226,7 @@ return {
       'rcarriga/nvim-dap-ui',
       'nvim-neotest/nvim-nio',
       'mfussenegger/nvim-dap-python',
+      'leoluz/nvim-dap-go',
     },
     config = function()
       require('dap.ext.vscode').load_launchjs()
@@ -239,6 +244,7 @@ return {
       end
 
       require('dap-python').setup('~/.local/share/nvim/mason/packages/debugpy/venv/bin/python')
+      require('dap-go').setup({})
 
       vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = 'Debug Toggle Breakpoint' })
       vim.keymap.set('n', '<leader>dc', dap.continue, { desc = 'Debug Continue' })
