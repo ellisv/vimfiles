@@ -186,8 +186,6 @@ return {
     end,
   },
 
-  'github/copilot.vim',
-
   {
     'iamcco/markdown-preview.nvim',
     cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
