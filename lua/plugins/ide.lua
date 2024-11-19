@@ -112,23 +112,6 @@ return {
               },
             })
           end,
-
-          ['pylsp'] = function()
-            require('lspconfig').pylsp.setup({
-              capabilities = capabilities,
-              settings = {
-                pylsp = {
-                  plugins = {
-                    pycodestyle = { maxLineLength = 120 },
-                    pyflakes = { maxLineLength = 120 },
-                    rope_autoimport = { enabled = true },
-                    -- :PylspInstall pyls-isort
-                    isort = { enabled = true },
-                  },
-                },
-              },
-            })
-          end,
         },
       })
 
