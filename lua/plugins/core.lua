@@ -114,7 +114,7 @@ return {
 
           map('n', 'gn', gs.next_hunk, { desc = 'Next Hunk' })
           map('n', 'gp', gs.prev_hunk, { desc = 'Prev Hunk' })
-          map('n', 'gu', gs.undo_stage_hunk, { desc = 'Undo Stage Hunk' })
+          map('n', 'gu', gs.reset_hunk, { desc = 'Reset Hunk' })
         end,
       })
     end,
