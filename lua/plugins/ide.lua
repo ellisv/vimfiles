@@ -152,10 +152,13 @@ return {
         'L3MON4D3/LuaSnip',
         run = 'make install_jsregexp',
       },
+      'onsails/lspkind-nvim',
+      'tailwind-tools',
     },
     config = function()
       local cmp = require('cmp')
       local luasnip = require('luasnip')
+      local lspkind = require('lspkind')
 
       cmp.setup({
         completion = { completeopt = 'menu,menuone' },
@@ -199,6 +202,11 @@ return {
           { name = 'luasnip' },
           { name = 'path' },
         }),
+        formatting = {
+          format = lspkind.cmp_format({
+            before = require("tailwind-tools.cmp").lspkind_format
+          })
+        },
       })
     end,
   },
@@ -233,4 +241,28 @@ return {
       vim.keymap.set('n', '<leader>dc', dap.continue, { desc = 'Debug Continue' })
     end,
   },
+
+  {
+    "luckasRanarison/tailwind-tools.nvim",
+    name = "tailwind-tools",
+    build = ":UpdateRemotePlugins",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-telescope/telescope.nvim",
+      "neovim/nvim-lspconfig",
+    },
+    config = function()
+      require("tailwind-tools").setup({
+        document_color = {
+          enabled = true,
+        },
+        conceal = {
+          enabled = false,
+        },
+      })
+
+      vim.keymap.set('n', '<space>tc', '<cmd>TailwindConcealToggle<cr>', { desc = 'Sort Tailwind classes' })
+      vim.keymap.set('n', '<space>ts', '<cmd>TailwindSort<cr>', { desc = 'Sort Tailwind classes' })
+    end,
+  }
 }
