@@ -81,10 +81,7 @@ return {
           vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
           vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
           vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-          vim.keymap.set('n', '<space>f', function()
-            vim.lsp.buf.format { async = true }
-          end, opts)
-        end
+        end,
       })
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -117,27 +114,27 @@ return {
 
       require('typescript-tools').setup({})
 
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = "*.go",
+      vim.api.nvim_create_autocmd('BufWritePre', {
+        pattern = '*.go',
         callback = function()
           local params = vim.lsp.util.make_range_params()
-          params.context = {only = {"source.organizeImports"}}
+          params.context = { only = { 'source.organizeImports' } }
           -- buf_request_sync defaults to a 1000ms timeout. Depending on your
           -- machine and codebase, you may want longer. Add an additional
           -- argument after params if you find that you have to write the file
           -- twice for changes to be saved.
           -- E.g., vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
-          local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
+          local result = vim.lsp.buf_request_sync(0, 'textDocument/codeAction', params)
           for cid, res in pairs(result or {}) do
             for _, r in pairs(res.result or {}) do
               if r.edit then
-                local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
+                local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or 'utf-16'
                 vim.lsp.util.apply_workspace_edit(r.edit, enc)
               end
             end
           end
-          vim.lsp.buf.format({async = false})
-        end
+          vim.lsp.buf.format({ async = false })
+        end,
       })
     end,
   },
@@ -204,8 +201,8 @@ return {
         }),
         formatting = {
           format = lspkind.cmp_format({
-            before = require("tailwind-tools.cmp").lspkind_format
-          })
+            before = require('tailwind-tools.cmp').lspkind_format,
+          }),
         },
       })
     end,
@@ -243,16 +240,16 @@ return {
   },
 
   {
-    "luckasRanarison/tailwind-tools.nvim",
-    name = "tailwind-tools",
-    build = ":UpdateRemotePlugins",
+    'luckasRanarison/tailwind-tools.nvim',
+    name = 'tailwind-tools',
+    build = ':UpdateRemotePlugins',
     dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-telescope/telescope.nvim",
-      "neovim/nvim-lspconfig",
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-telescope/telescope.nvim',
+      'neovim/nvim-lspconfig',
     },
     config = function()
-      require("tailwind-tools").setup({
+      require('tailwind-tools').setup({
         document_color = {
           enabled = true,
         },
@@ -264,5 +261,28 @@ return {
       vim.keymap.set('n', '<space>tc', '<cmd>TailwindConcealToggle<cr>', { desc = 'Sort Tailwind classes' })
       vim.keymap.set('n', '<space>ts', '<cmd>TailwindSort<cr>', { desc = 'Sort Tailwind classes' })
     end,
-  }
+  },
+
+  {
+    'stevearc/conform.nvim',
+    dependencies = { 'mason.nvim' },
+    config = function()
+      require('conform').setup({
+        formatters_by_ft = {
+          lua = { 'stylua' },
+          python = { 'isort', 'black' },
+        },
+        default_format_opts = {
+          lsp_format = 'fallback',
+        },
+        formatters = {
+          isort = { prepend_args = { '--profile', 'black' } },
+        },
+      })
+
+      vim.keymap.set('n', '<space>f', function()
+        require('conform').format({ async = true })
+      end)
+    end,
+  },
 }
