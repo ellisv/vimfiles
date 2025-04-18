@@ -172,7 +172,15 @@ return {
       vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = 'Find existing buffers' })
       vim.keymap.set('n', '<leader>m', builtin.git_status, { desc = 'Find modified files' })
       vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Search by Grep' })
+      vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Search Resume' })
       vim.keymap.set('n', '<leader>fu', builtin.lsp_document_symbols, { desc = 'Find symbols in document' })
+      vim.keymap.set("n", "<leader>sb", function()
+          -- You can pass additional configuration to Telescope to change the theme, layout, etc.
+          builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+              winblend = 10,
+              previewer = false,
+          }))
+      end, { desc = "[sb] Fuzzily search in current buffer" })
     end,
   },
 
