@@ -201,31 +201,32 @@ return {
   {
     'mfussenegger/nvim-dap',
     dependencies = {
-      'rcarriga/nvim-dap-ui',
-      'nvim-neotest/nvim-nio',
       'mfussenegger/nvim-dap-python',
       'leoluz/nvim-dap-go',
     },
     config = function()
       require('dap.ext.vscode').load_launchjs()
       local dap = require('dap')
-      local dapui = require('dapui')
-      dapui.setup({})
-      dap.listeners.after.event_initialized['dapui_config'] = function()
-        dapui.open({})
-      end
-      dap.listeners.before.event_terminated['dapui_config'] = function()
-        dapui.close({})
-      end
-      dap.listeners.before.event_exited['dapui_config'] = function()
-        dapui.close({})
-      end
 
       require('dap-python').setup('~/.local/share/nvim/mason/packages/debugpy/venv/bin/python')
       require('dap-go').setup({})
 
+
+
       vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = 'Debug Toggle Breakpoint' })
       vim.keymap.set('n', '<leader>dc', dap.continue, { desc = 'Debug Continue' })
+      vim.keymap.set('n', '<leader>dj', function() require('dap').step_over() end)
+      vim.keymap.set('n', '<leader>dl', function() require('dap').step_into() end)
+      vim.keymap.set('n', '<leader>dh', function() require('dap').step_out() end)
+      vim.keymap.set('n', '<leader>dr', function() require('dap').repl.open() end)
+      vim.keymap.set('n', '<leader>df', function()
+        local widgets = require('dap.ui.widgets')
+        widgets.centered_float(widgets.frames)
+      end)
+      vim.keymap.set('n', '<Leader>ds', function()
+        local widgets = require('dap.ui.widgets')
+        widgets.centered_float(widgets.scopes)
+      end)
     end,
   },
 
