@@ -209,9 +209,14 @@ return {
       local dap = require('dap')
 
       require('dap-python').setup('~/.local/share/nvim/mason/packages/debugpy/venv/bin/python')
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "python",
+        callback = function()
+          vim.keymap.set("n", "<leader>dt", function () require('dap-python').test_method() end, { buffer = true, desc = "Debug python method" })
+        end,
+      })
+
       require('dap-go').setup({})
-
-
 
       vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = 'Debug Toggle Breakpoint' })
       vim.keymap.set('n', '<leader>dc', dap.continue, { desc = 'Debug Continue' })
