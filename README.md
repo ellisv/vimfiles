@@ -15,3 +15,4 @@ Requirements
 ### Mac OS X
 
     brew install ripgrep
+    brew install tree-sitter-cli
