@@ -1,58 +1,58 @@
 return {
   {
-    'UtkarshVerma/molokai.nvim',
+    "UtkarshVerma/molokai.nvim",
     priority = 1000,
     config = function()
-      require('molokai').setup({
+      require("molokai").setup({
         styles = {
           comments = { italic = false },
           keywords = { italic = false },
         },
       })
 
-      vim.cmd.colorscheme('molokai')
+      vim.cmd.colorscheme("molokai")
     end,
   },
 
   {
-    'nvim-neo-tree/neo-tree.nvim',
-    branch = 'v3.x',
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
     dependencies = {
-      'nvim-lua/plenary.nvim',
+      "nvim-lua/plenary.nvim",
       -- "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      'MunifTanjim/nui.nvim',
+      "MunifTanjim/nui.nvim",
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     },
     config = function()
-      require('neo-tree').setup({
+      require("neo-tree").setup({
         close_if_last_window = true,
 
         default_component_configs = {
           indent = {
-            expander_collapsed = '▶',
-            expander_expanded = '▼',
+            expander_collapsed = "▶",
+            expander_expanded = "▼",
           },
           icon = {
-            folder_closed = '▶',
-            folder_open = '▼',
-            folder_empty = '▷',
-            default = ' ',
-            highlight = 'NeoTreeFileIcon',
+            folder_closed = "▶",
+            folder_open = "▼",
+            folder_empty = "▷",
+            default = " ",
+            highlight = "NeoTreeFileIcon",
           },
           name = {
             use_git_status_colors = false,
           },
           git_status = {
             symbols = {
-              added = '',
-              modified = '✹',
-              deleted = '✖',
-              renamed = '➜',
-              untracked = '✭',
-              ignored = '☒',
-              unstaged = '✗',
-              staged = '+',
-              conflict = 'C',
+              added = "",
+              modified = "✹",
+              deleted = "✖",
+              renamed = "➜",
+              untracked = "✭",
+              ignored = "☒",
+              unstaged = "✗",
+              staged = "+",
+              conflict = "C",
             },
           },
         },
@@ -61,14 +61,14 @@ return {
           filtered_items = {
             hide_dotfiles = false,
             hide_gitignored = false,
-            never_show = { '.git' },
+            never_show = { ".git" },
           },
         },
 
         window = {
-          position = 'right',
+          position = "right",
           mappings = {
-            ['oo'] = { 'open', nowait = true },
+            ["oo"] = { "open", nowait = true },
           },
         },
       })
@@ -76,16 +76,16 @@ return {
   },
 
   {
-    'lewis6991/gitsigns.nvim',
+    "lewis6991/gitsigns.nvim",
     config = function()
-      require('gitsigns').setup({
+      require("gitsigns").setup({
         signs = {
-          add = { text = '│' },
-          change = { text = '│' },
-          delete = { text = '_' },
-          topdelete = { text = '‾' },
-          changedelete = { text = '~' },
-          untracked = { text = '┆' },
+          add = { text = "│" },
+          change = { text = "│" },
+          delete = { text = "_" },
+          topdelete = { text = "‾" },
+          changedelete = { text = "~" },
+          untracked = { text = "┆" },
         },
         on_attach = function(bufnr)
           local gs = package.loaded.gitsigns
@@ -96,48 +96,48 @@ return {
             vim.keymap.set(mode, l, r, opts)
           end
 
-          map('n', 'gn', gs.next_hunk, { desc = 'Next Hunk' })
-          map('n', 'gp', gs.prev_hunk, { desc = 'Prev Hunk' })
-          map('n', 'gu', gs.reset_hunk, { desc = 'Reset Hunk' })
+          map("n", "gn", gs.next_hunk, { desc = "Next Hunk" })
+          map("n", "gp", gs.prev_hunk, { desc = "Prev Hunk" })
+          map("n", "gu", gs.reset_hunk, { desc = "Reset Hunk" })
         end,
       })
     end,
   },
 
   {
-    'tpope/vim-fugitive',
+    "tpope/vim-fugitive",
     lazy = false,
     config = function()
-      vim.keymap.set('n', 'gs', '<Cmd>Git<CR>')
+      vim.keymap.set("n", "gs", "<Cmd>Git<CR>")
     end,
   },
 
   {
-    'nvim-telescope/telescope.nvim',
+    "nvim-telescope/telescope.nvim",
     dependencies = {
-      'nvim-lua/plenary.nvim',
+      "nvim-lua/plenary.nvim",
       { -- If encountering errors, see telescope-fzf-native README for install instructions
-        'nvim-telescope/telescope-fzf-native.nvim',
+        "nvim-telescope/telescope-fzf-native.nvim",
 
         -- `build` is used to run some command when the plugin is installed/updated.
         -- This is only run then, not every time Neovim starts up.
-        build = 'make',
+        build = "make",
 
         -- `cond` is a condition used to determine whether this plugin should be
         -- installed and loaded.
         cond = function()
-          return vim.fn.executable('make') == 1
+          return vim.fn.executable("make") == 1
         end,
       },
     },
     config = function()
-      local actions = require('telescope.actions')
+      local actions = require("telescope.actions")
 
-      require('telescope').setup({
+      require("telescope").setup({
         defaults = {
           mappings = {
             i = {
-              ['<esc>'] = actions.close,
+              ["<esc>"] = actions.close,
             },
           },
         },
@@ -148,15 +148,15 @@ return {
           },
         },
       })
-      require('telescope').load_extension('fzf')
+      require("telescope").load_extension("fzf")
 
-      local builtin = require('telescope.builtin')
-      vim.keymap.set('n', '<C-p>', builtin.find_files, { desc = 'Find files' })
-      vim.keymap.set('n', '<leader>b', builtin.buffers, { desc = 'Find existing buffers' })
-      vim.keymap.set('n', '<leader>m', builtin.git_status, { desc = 'Find modified files' })
-      vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = 'Search by Grep' })
-      vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = 'Search Resume' })
-      vim.keymap.set('n', '<leader>fu', builtin.lsp_document_symbols, { desc = 'Find symbols in document' })
+      local builtin = require("telescope.builtin")
+      vim.keymap.set("n", "<C-p>", builtin.find_files, { desc = "Find files" })
+      vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "Find existing buffers" })
+      vim.keymap.set("n", "<leader>m", builtin.git_status, { desc = "Find modified files" })
+      vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Search by Grep" })
+      vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "Search Resume" })
+      vim.keymap.set("n", "<leader>fu", builtin.lsp_document_symbols, { desc = "Find symbols in document" })
       vim.keymap.set("n", "<leader>sb", function()
           -- You can pass additional configuration to Telescope to change the theme, layout, etc.
           builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
@@ -167,23 +167,23 @@ return {
     end,
   },
 
-  'tpope/vim-surround', -- E.g. cs{(
+  "tpope/vim-surround", -- E.g. cs{(
   {
-    'vimwiki/vimwiki',
+    "vimwiki/vimwiki",
     init = function()
       vim.g.vimwiki_list = {
-        { path = '~/Dropbox/notes/' },
+        { path = "~/Dropbox/notes/" },
       }
     end,
   },
 
   {
-    'iamcco/markdown-preview.nvim',
-    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
-    build = 'cd app && yarn install',
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    build = "cd app && yarn install",
     init = function()
-      vim.g.mkdp_filetypes = { 'markdown' }
+      vim.g.mkdp_filetypes = { "markdown" }
     end,
-    ft = { 'markdown' },
+    ft = { "markdown" },
   },
 }

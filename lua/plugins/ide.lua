@@ -1,24 +1,24 @@
 return {
   {
-    'nvim-treesitter/nvim-treesitter',
+    "nvim-treesitter/nvim-treesitter",
     branch = "main",
     version = false,
     lazy = false,
-    build = ':TSUpdate',
+    build = ":TSUpdate",
     config = function()
-      require('nvim-treesitter').setup({
+      require("nvim-treesitter").setup({
         ensure_installed = {
-          'go',
-          'javascript',
-          'lua',
-          'markdown',
-          'markdown_inline',
-          'php',
-          'python',
-          'typescript',
-          'vim',
-          'vimdoc',
-          'json',
+          "go",
+          "javascript",
+          "lua",
+          "markdown",
+          "markdown_inline",
+          "php",
+          "python",
+          "typescript",
+          "vim",
+          "vimdoc",
+          "json",
         },
 
         highlight = {
@@ -32,76 +32,76 @@ return {
   },
 
   {
-    'Wansmer/treesj',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    "Wansmer/treesj",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
     config = function()
-      local treesj = require('treesj')
+      local treesj = require("treesj")
 
       treesj.setup({
         use_default_keymaps = false,
       })
 
-      vim.keymap.set('n', 'gS', treesj.split, { desc = 'Split under cursor' })
-      vim.keymap.set('n', 'gJ', treesj.join, { desc = 'Join under cursor' })
+      vim.keymap.set("n", "gS", treesj.split, { desc = "Split under cursor" })
+      vim.keymap.set("n", "gJ", treesj.join, { desc = "Join under cursor" })
     end,
   },
 
   {
-    'numToStr/Comment.nvim',
+    "numToStr/Comment.nvim",
     config = function()
-      require('Comment').setup()
+      require("Comment").setup()
     end,
   },
 
   {
-    'neovim/nvim-lspconfig',
+    "neovim/nvim-lspconfig",
     dependencies = {
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
-      'pmizio/typescript-tools.nvim',
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "pmizio/typescript-tools.nvim",
     },
     config = function()
-      vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = vim.api.nvim_create_augroup("UserLspConfig", {}),
         callback = function(ev)
           -- Enable completion triggered by <c-x><c-o>
-          vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+          vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
           -- Buffer local mappings.
           -- See `:help vim.lsp.*` for documentation on any of the below functions
           local opts = { buffer = ev.buf }
-          vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-          vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-          vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-          vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-          vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-          vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-          vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
-          vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+          vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+          vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+          vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+          vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+          vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+          vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts)
+          vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
+          vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, opts)
+          vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
         end,
       })
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+      capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-      require('mason').setup()
-      require('mason-lspconfig').setup({
-        ensure_installed = { 'lua_ls' },
+      require("mason").setup()
+      require("mason-lspconfig").setup({
+        ensure_installed = { "lua_ls" },
         handlers = {
           function(server_name)
-            require('lspconfig')[server_name].setup({
+            require("lspconfig")[server_name].setup({
               capabilities = capabilities,
             })
           end,
 
-          ['lua_ls'] = function()
-            require('lspconfig').lua_ls.setup({
+          ["lua_ls"] = function()
+            require("lspconfig").lua_ls.setup({
               capabilities = capabilities,
               settings = {
                 Lua = {
                   diagnostics = {
-                    globals = { 'vim' },
+                    globals = { "vim" },
                   },
                 },
               },
@@ -110,23 +110,23 @@ return {
         },
       })
 
-      require('typescript-tools').setup({})
+      require("typescript-tools").setup({})
 
-      vim.api.nvim_create_autocmd('BufWritePre', {
-        pattern = '*.go',
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = "*.go",
         callback = function()
           local params = vim.lsp.util.make_range_params()
-          params.context = { only = { 'source.organizeImports' } }
+          params.context = { only = { "source.organizeImports" } }
           -- buf_request_sync defaults to a 1000ms timeout. Depending on your
           -- machine and codebase, you may want longer. Add an additional
           -- argument after params if you find that you have to write the file
           -- twice for changes to be saved.
           -- E.g., vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
-          local result = vim.lsp.buf_request_sync(0, 'textDocument/codeAction', params)
+          local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params)
           for cid, res in pairs(result or {}) do
             for _, r in pairs(res.result or {}) do
               if r.edit then
-                local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or 'utf-16'
+                local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
                 vim.lsp.util.apply_workspace_edit(r.edit, enc)
               end
             end
@@ -138,39 +138,39 @@ return {
   },
 
   {
-    'hrsh7th/nvim-cmp',
+    "hrsh7th/nvim-cmp",
     dependencies = {
-      'saadparwaiz1/cmp_luasnip',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-path',
+      "saadparwaiz1/cmp_luasnip",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-path",
       {
-        'L3MON4D3/LuaSnip',
-        run = 'make install_jsregexp',
+        "L3MON4D3/LuaSnip",
+        run = "make install_jsregexp",
       },
     },
     config = function()
-      local cmp = require('cmp')
-      local luasnip = require('luasnip')
+      local cmp = require("cmp")
+      local luasnip = require("luasnip")
 
       cmp.setup({
-        completion = { completeopt = 'menu,menuone' },
+        completion = { completeopt = "menu,menuone" },
         snippet = {
           expand = function(args)
-            require('luasnip').lsp_expand(args.body)
+            require("luasnip").lsp_expand(args.body)
           end,
         },
         mapping = cmp.mapping.preset.insert({
-          ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-d>'] = cmp.mapping.scroll_docs(4),
-          ['<C-n>'] = cmp.mapping.select_next_item(),
-          ['<C-p>'] = cmp.mapping.select_prev_item(),
-          ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-          ['<C-Space>'] = cmp.mapping.complete({}),
-          ['<CR>'] = cmp.mapping.confirm({
+          ["<C-u>"] = cmp.mapping.scroll_docs(-4),
+          ["<C-d>"] = cmp.mapping.scroll_docs(4),
+          ["<C-n>"] = cmp.mapping.select_next_item(),
+          ["<C-p>"] = cmp.mapping.select_prev_item(),
+          ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+          ["<C-Space>"] = cmp.mapping.complete({}),
+          ["<CR>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
           }),
-          ['<Tab>'] = cmp.mapping(function(fallback)
+          ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
@@ -178,8 +178,8 @@ return {
             else
               fallback()
             end
-          end, { 'i', 's' }),
-          ['<S-Tab>'] = cmp.mapping(function(fallback)
+          end, { "i", "s" }),
+          ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
             elseif luasnip.jumpable(-1) then
@@ -187,82 +187,82 @@ return {
             else
               fallback()
             end
-          end, { 'i', 's' }),
+          end, { "i", "s" }),
         }),
         sources = cmp.config.sources({
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'path' },
+          { name = "nvim_lsp" },
+          { name = "luasnip" },
+          { name = "path" },
         }),
       })
     end,
   },
 
   {
-    'mfussenegger/nvim-dap',
+    "mfussenegger/nvim-dap",
     dependencies = {
-      'mfussenegger/nvim-dap-python',
-      'leoluz/nvim-dap-go',
+      "mfussenegger/nvim-dap-python",
+      "leoluz/nvim-dap-go",
     },
     config = function()
-      require('dap.ext.vscode').load_launchjs()
-      local dap = require('dap')
+      require("dap.ext.vscode").load_launchjs()
+      local dap = require("dap")
 
-      require('dap-python').setup('~/.local/share/nvim/mason/packages/debugpy/venv/bin/python')
+      require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "python",
         callback = function()
-          vim.keymap.set("n", "<leader>dt", function () require('dap-python').test_method() end, { buffer = true, desc = "Debug python method" })
+          vim.keymap.set("n", "<leader>dt", function () require("dap-python").test_method() end, { buffer = true, desc = "Debug python method" })
         end,
       })
 
-      require('dap-go').setup({})
+      require("dap-go").setup({})
 
-      vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = 'Debug Toggle Breakpoint' })
-      vim.keymap.set('n', '<leader>dc', dap.continue, { desc = 'Debug Continue' })
-      vim.keymap.set('n', '<leader>dj', function() require('dap').step_over() end)
-      vim.keymap.set('n', '<leader>dl', function() require('dap').step_into() end)
-      vim.keymap.set('n', '<leader>dh', function() require('dap').step_out() end)
-      vim.keymap.set('n', '<leader>dr', function() require('dap').repl.open() end)
-      vim.keymap.set('n', '<leader>df', function()
-        local widgets = require('dap.ui.widgets')
+      vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "Debug Toggle Breakpoint" })
+      vim.keymap.set("n", "<leader>dc", dap.continue, { desc = "Debug Continue" })
+      vim.keymap.set("n", "<leader>dj", function() require("dap").step_over() end)
+      vim.keymap.set("n", "<leader>dl", function() require("dap").step_into() end)
+      vim.keymap.set("n", "<leader>dh", function() require("dap").step_out() end)
+      vim.keymap.set("n", "<leader>dr", function() require("dap").repl.open() end)
+      vim.keymap.set("n", "<leader>df", function()
+        local widgets = require("dap.ui.widgets")
         widgets.centered_float(widgets.frames)
       end)
-      vim.keymap.set('n', '<Leader>ds', function()
-        local widgets = require('dap.ui.widgets')
+      vim.keymap.set("n", "<Leader>ds", function()
+        local widgets = require("dap.ui.widgets")
         widgets.centered_float(widgets.scopes)
       end)
     end,
   },
 
   {
-    'stevearc/conform.nvim',
-    dependencies = { 'mason.nvim' },
+    "stevearc/conform.nvim",
+    dependencies = { "mason.nvim" },
     config = function()
-      require('conform').setup({
+      require("conform").setup({
         formatters_by_ft = {
-          lua = { 'stylua' },
+          lua = { "stylua" },
           python = function(bufnr)
-            if require('conform').get_formatter_info('ruff_format', bufnr).available then
-              return { 'ruff_organize_imports', 'ruff_fix', 'ruff_format' }
+            if require("conform").get_formatter_info("ruff_format", bufnr).available then
+              return { "ruff_organize_imports", "ruff_fix", "ruff_format" }
             else
-              return { 'isort', 'black' }
+              return { "isort", "black" }
             end
           end,
         },
         default_format_opts = {
-          lsp_format = 'fallback',
+          lsp_format = "fallback",
         },
         formatters = {
-          isort = { prepend_args = { '--profile', 'black' } },
+          isort = { prepend_args = { "--profile", "black" } },
         },
       })
 
-      vim.keymap.set('n', '<space>f', function()
-        require('conform').format({ async = true })
+      vim.keymap.set("n", "<space>f", function()
+        require("conform").format({ async = true })
       end)
     end,
   },
 
-  'github/copilot.vim',
+  "github/copilot.vim",
 }
