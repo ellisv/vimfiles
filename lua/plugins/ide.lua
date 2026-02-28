@@ -263,4 +263,6 @@ return {
       end)
     end,
   },
+
+  'github/copilot.vim',
 }
