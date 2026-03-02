@@ -277,6 +277,10 @@ return {
             accept = "<M-l>",
           },
         },
+        filetypes = {
+          vimwiki = false,
+          ["*"] = true,
+        },
       })
     end,
   },
