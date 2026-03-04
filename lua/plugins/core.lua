@@ -174,6 +174,7 @@ return {
       vim.g.vimwiki_list = {
         { path = "~/Dropbox/notes/" },
       }
+      vim.g.vimwiki_global_ext = 0
     end,
   },
 
