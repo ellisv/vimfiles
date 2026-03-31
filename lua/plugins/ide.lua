@@ -205,7 +205,6 @@ return {
       "leoluz/nvim-dap-go",
     },
     config = function()
-      require("dap.ext.vscode").load_launchjs()
       local dap = require("dap")
 
       require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
