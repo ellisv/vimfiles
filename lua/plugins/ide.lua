@@ -278,6 +278,7 @@ return {
         },
         filetypes = {
           vimwiki = false,
+          markdown = false,
           ["*"] = true,
         },
       })
