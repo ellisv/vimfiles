@@ -31,6 +31,25 @@ return {
   },
 
   {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    branch = "main",
+    init = function()
+      -- disable entire built-in ftplugin mappings to avoid conflicts.
+      -- see https://github.com/neovim/neovim/tree/master/runtime/ftplugin for built-in ftplugins.
+      vim.g.no_plugin_maps = true
+
+      -- or, disable per filetype (add as you like)
+      -- vim.g.no_python_maps = true
+      -- vim.g.no_ruby_maps = true
+      -- vim.g.no_rust_maps = true
+      -- vim.g.no_go_maps = true
+    end,
+    config = function()
+      -- put your config here
+    end,
+  },
+
+  {
     "Wansmer/treesj",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     config = function()
@@ -86,7 +105,7 @@ return {
 
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls" },
+        ensure_installed = { "lua_ls", "copilot" },
         handlers = {
           function(server_name)
             require("lspconfig")[server_name].setup({
@@ -210,7 +229,7 @@ return {
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "python",
         callback = function()
-          vim.keymap.set("n", "<leader>dt", function () require("dap-python").test_method() end, { buf = true, desc = "Debug python method" })
+          vim.keymap.set("n", "<leader>dt", function () require("dap-python").test_method() end, { buf = bufnr, desc = "Debug python method" })
         end,
       })
 
@@ -259,35 +278,6 @@ return {
       vim.keymap.set("n", "<space>f", function()
         require("conform").format({ async = true })
       end)
-    end,
-  },
-
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      require("copilot").setup({
-        suggestion = {
-          enabled = true,
-          auto_trigger = true,
-          keymap = {
-            accept = "<M-l>",
-          },
-        },
-        filetypes = {
-          vimwiki = false,
-          markdown = false,
-          sh = function ()
-            if string.match(vim.fs.basename(vim.api.nvim_buf_get_name(0)), '^%.env.*') then
-              -- disable for .env files
-              return false
-            end
-            return true
-          end,
-          ["*"] = true,
-        },
-      })
     end,
   },
 }
