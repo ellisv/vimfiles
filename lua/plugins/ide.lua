@@ -23,7 +23,6 @@ return {
 
         highlight = {
           enable = true,
-          use_languagetree = true,
         },
 
         indent = { enable = true },
@@ -69,7 +68,7 @@ return {
 
           -- Buffer local mappings.
           -- See `:help vim.lsp.*` for documentation on any of the below functions
-          local opts = { buffer = ev.buf }
+          local opts = { buf = ev.buf }
           vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
           vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
           vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -145,7 +144,7 @@ return {
       "hrsh7th/cmp-path",
       {
         "L3MON4D3/LuaSnip",
-        run = "make install_jsregexp",
+        build = "make install_jsregexp",
       },
     },
     config = function()
@@ -211,7 +210,7 @@ return {
       vim.api.nvim_create_autocmd("FileType", {
         pattern = "python",
         callback = function()
-          vim.keymap.set("n", "<leader>dt", function () require("dap-python").test_method() end, { buffer = true, desc = "Debug python method" })
+          vim.keymap.set("n", "<leader>dt", function () require("dap-python").test_method() end, { buf = true, desc = "Debug python method" })
         end,
       })
 
