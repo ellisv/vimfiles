@@ -19,8 +19,9 @@ vim.opt.timeoutlen = 300
 
 vim.opt.clipboard = "unnamedplus" -- Sync clipboard between OS and Neovim.
 
+vim.opt.autoread = true  -- Automatically reload files changed outside of Neovim
 vim.opt.swapfile = false
-vim.opt.undofile = true -- Save undo history
+vim.opt.undofile = true  -- Save undo history
 
 -- UI
 vim.opt.background = "dark"
