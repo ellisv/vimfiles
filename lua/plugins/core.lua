@@ -192,10 +192,11 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
-    ---@type snacks.Config
-    opts = {
-      bigfile = { enabled = true },
-      picker = { enabled = true },
-    },
+    config = function()
+      require("snacks").setup({
+        bigfile = { enabled = true },
+        picker = { enabled = true },
+      })
+    end,
   }
 }
