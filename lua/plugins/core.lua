@@ -203,7 +203,7 @@ return {
       vim.keymap.set("n", "<leader>gp", function() Snacks.picker.gh_pr() end, { desc = "GitHub Pull Requests (open)" })
       vim.keymap.set("n", "<leader>gP", function() Snacks.picker.gh_pr({ state = "all" }) end, { desc = "GitHub Pull Requests (all)" })
       -- lazygit
-      vim.keymap.set("n", "gs", function() Snacks.lazygit() end, { desc = "Open lazygit" })
+      vim.keymap.set("n", "<leader>gg", function() Snacks.lazygit() end, { desc = "Open lazygit" })
     end,
   },
 }
