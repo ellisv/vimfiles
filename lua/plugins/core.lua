@@ -105,14 +105,6 @@ return {
   },
 
   {
-    "tpope/vim-fugitive",
-    lazy = false,
-    config = function()
-      vim.keymap.set("n", "gs", "<Cmd>Git<CR>")
-    end,
-  },
-
-  {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -196,6 +188,7 @@ return {
       require("snacks").setup({
         bigfile = { enabled = true },
         picker = { enabled = true },
+        lazygit = { enabled = true },
       })
 
       -- git
@@ -209,6 +202,8 @@ return {
       -- gh
       vim.keymap.set("n", "<leader>gp", function() Snacks.picker.gh_pr() end, { desc = "GitHub Pull Requests (open)" })
       vim.keymap.set("n", "<leader>gP", function() Snacks.picker.gh_pr({ state = "all" }) end, { desc = "GitHub Pull Requests (all)" })
+      -- lazygit
+      vim.keymap.set("n", "gs", function() Snacks.lazygit() end, { desc = "Open lazygit" })
     end,
   },
 }

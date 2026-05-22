@@ -11,8 +11,10 @@ Requirements
 
 * Neovim
 * [ripgrep](https://github.com/BurntSushi/ripgrep)
+* lazygit
 
 ### Mac OS X
 
     brew install ripgrep
     brew install tree-sitter-cli
+    brew install lazygit
