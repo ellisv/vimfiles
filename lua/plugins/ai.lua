@@ -9,7 +9,7 @@ return {
           enabled = true,
           auto_trigger = true,
           keymap = {
-            accept = "<M-l>",
+            accept = false,
           },
         },
         filetypes = {
@@ -25,6 +25,13 @@ return {
           ["*"] = true,
         },
       })
+
+      vim.keymap.set("i", "<M-l>", function()
+        local suggestion = require("copilot.suggestion")
+        if suggestion.is_visible() then
+          suggestion.accept()
+        end
+      end, { desc = "Copilot Accept Suggestion" })
     end,
   },
 
