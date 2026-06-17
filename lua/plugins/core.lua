@@ -61,7 +61,7 @@ return {
           filtered_items = {
             hide_dotfiles = false,
             hide_gitignored = false,
-            never_show = { ".git" },
+            never_show = { ".git", "__pycache__", ".mypy_cache", ".pytest_cache" },
           },
         },
 
