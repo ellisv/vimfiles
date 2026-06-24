@@ -45,6 +45,9 @@ return {
         },
       },
       cli = {
+        win = {
+          layout = "left",
+        },
         mux = {
           backend = "tmux",
           enabled = true,
