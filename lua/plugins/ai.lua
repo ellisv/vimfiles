@@ -36,10 +36,7 @@ return {
   },
 
   {
-    -- Until upstream sidekick.nvim supports the herdr mux backend, use the fork
-    -- "folke/sidekick.nvim",
-    "rmarganti/sidekick.nvim",
-    branch = "herdr",
+    "folke/sidekick.nvim",
     opts = {
       nes = {
         enabled = true,
@@ -52,7 +49,7 @@ return {
           layout = "left",
         },
         mux = {
-          backend = "herdr",
+          backend = "tmux",
           enabled = true,
         },
       },
